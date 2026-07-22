@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://mh51cbgar6w"]
 
-[ext_resource type="Texture2D" uid="uid://calirm1malddv" path="res://menu_background.svg" id="1_itxqv"]
+[ext_resource type="Texture2D" uid="uid://calirm1malddv" path="res://assets/menu_background.svg" id="1_itxqv"]
 
 [node name="Main" type="Control" unique_id=2133287278]
 layout_mode = 3
