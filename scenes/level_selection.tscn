@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://d3s7iguagvhft"]
 
-[ext_resource type="Script" uid="uid://d0ep46xxpdhdh" path="res://scripts/level_selection.gd" id="1_3rh63"]
 [ext_resource type="Texture2D" uid="uid://cw07p3lmn2ksa" path="res://assets/level_selection_background.png" id="1_u1g2d"]
 [ext_resource type="Texture2D" uid="uid://bvwcxu1tfpaed" path="res://assets/level_selection_button_icon.png" id="2_gswpo"]
+[ext_resource type="Script" uid="uid://cgx186vfth6x7" path="res://scripts/level_buttons/button.gd" id="3_3rh63"]
+[ext_resource type="Script" uid="uid://bxi2e7s1vp3du" path="res://scripts/level_buttons/button_test.gd" id="4_tuscg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gswpo"]
 
@@ -17,8 +18,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_3rh63")
-level = &"res://level1.tscn"
 
 [node name="Background" type="TextureRect" parent="." unique_id=202124807]
 layout_mode = 1
@@ -72,6 +71,8 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_tuscg")
 text = "1"
 icon = ExtResource("2_gswpo")
 icon_alignment = 1
+script = ExtResource("3_3rh63")
+level = &"res://scenes/levels/level_1.tscn"
 
 [node name="Button2" type="Button" parent="MarginContainer2/GridContainer" unique_id=1329413551]
 layout_mode = 2
@@ -154,7 +155,23 @@ text = "10"
 icon = ExtResource("2_gswpo")
 icon_alignment = 1
 
-[connection signal="pressed" from="MarginContainer2/GridContainer/Button" to="." method="_on_button_pressed"]
+[node name="Button11" type="Button" parent="." unique_id=267681155]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 347.0
+offset_right = 852.0
+offset_bottom = 410.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gswpo")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3rh63")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tuscg")
+text = "Test
+Level"
+icon = ExtResource("2_gswpo")
+icon_alignment = 1
+script = ExtResource("4_tuscg")
+level = &"res://scenes/levels/level_test.tscn"
+
+[connection signal="pressed" from="MarginContainer2/GridContainer/Button" to="MarginContainer2/GridContainer/Button" method="_on_pressed"]
 [connection signal="pressed" from="MarginContainer2/GridContainer/Button2" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MarginContainer2/GridContainer/Button3" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MarginContainer2/GridContainer/Button4" to="." method="_on_button_pressed"]
@@ -164,3 +181,5 @@ icon_alignment = 1
 [connection signal="pressed" from="MarginContainer2/GridContainer/Button8" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MarginContainer2/GridContainer/Button9" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MarginContainer2/GridContainer/Button10" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button11" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button11" to="Button11" method="_on_pressed"]
