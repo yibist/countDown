@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ck3j3v4257r4y"]
+
+[ext_resource type="PackedScene" uid="uid://ckrag6qa4otci" path="res://scene/player.tscn" id="1_jwv3a"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5jg4h"]
+distance = -93.0
+
+[node name="Map" type="Node2D" unique_id=1355848155]
+
+[node name="floor" type="StaticBody2D" parent="." unique_id=1776009086]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor" unique_id=1117140724]
+position = Vector2(0, 73)
+shape = SubResource("WorldBoundaryShape2D_5jg4h")
+
+[node name="Player" parent="." unique_id=1029642626 instance=ExtResource("1_jwv3a")]
