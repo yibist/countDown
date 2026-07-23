@@ -25,9 +25,19 @@ func spawn() -> void:
 	show()
 	
 func despawn() -> void:
+	hit = false
+	global_position = Vector2(-100000,-100000)
 	hide()
 	
 func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("ungraple"):
+		despawn()
+	if Input.is_action_pressed("reelInGrapleHook"):
+		
+		ropeLength -= delta * 200
+		if ropeLength < 50:
+			ropeLength = 50
+	print(hit)
 	if not hit:
 		var collision = move_and_collide(move_direction * speed * delta)
 		if collision:
