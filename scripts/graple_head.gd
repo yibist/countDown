@@ -1,9 +1,11 @@
 extends CharacterBody2D
 
+@export var player: CharacterBody2D
 @export var speed: float = 2000.0  
 var move_direction: Vector2
 var hit: bool = false
 var rope: PinJoint2D;
+var ropeLength: float;
 
 func _ready() -> void:
 	top_level = true;
@@ -30,10 +32,5 @@ func _process(delta: float) -> void:
 		var collision = move_and_collide(move_direction * speed * delta)
 		if collision:
 			hit = true
+			ropeLength = global_position.distance_to(player.global_position)
 			global_position += move_direction * 10
-			print("Hit wall at: ", collision.get_position())
-			print("Wall normal: ", collision.get_normal())
-
-func wallHit(wall: Node2D) -> void:
-	hit = true;
-	

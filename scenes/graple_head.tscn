@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c23kslkfpouqr"]
+
+[ext_resource type="Script" uid="uid://b0mnsy1biixr" path="res://scripts/graple_head.gd" id="1_1dgco"]
+[ext_resource type="Texture2D" uid="uid://bd42rpui55hmq" path="res://assets/arrowHead.png" id="2_ryalu"]
+
+[node name="GrapleHead" type="CharacterBody2D" unique_id=285944462]
+script = ExtResource("1_1dgco")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1229617778]
+polygon = PackedVector2Array(0, -4, 2, 3, -2, 3)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=358909058]
+scale = Vector2(0.28125, 0.28125)
+texture = ExtResource("2_ryalu")

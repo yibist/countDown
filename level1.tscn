@@ -18,7 +18,7 @@ position = Vector2(371, 474)
 shape = SubResource("WorldBoundaryShape2D_5jg4h")
 
 [node name="Player" parent="." unique_id=1029642626 instance=ExtResource("1_jwv3a")]
-position = Vector2(63, 52)
+position = Vector2(64, 43)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=738723874]
 collision_layer = 3
