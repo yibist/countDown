@@ -1,6 +1,6 @@
 extends AnimatedSprite2D
 
-@export var grapleHead: Sprite2D
+@export var grapleHead: CharacterBody2D
 var orbit_distance: float = 0.0
 var parent_node: Node2D
 

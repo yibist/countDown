@@ -1,7 +1,9 @@
-extends Sprite2D
+extends CharacterBody2D
 
 @export var speed: float = 2000.0  
 var move_direction: Vector2
+var hit: bool = false
+var rope: PinJoint2D;
 
 func _ready() -> void:
 	top_level = true;
@@ -13,14 +15,25 @@ func spawn() -> void:
 	
 	move_direction = (mouse_pos - parent_pos).normalized()
 	
-	global_position = parent_pos + (move_direction * 50)
+	global_position = parent_pos + (move_direction * 10)
 	
 	look_at(global_position + move_direction)
 	rotation += deg_to_rad(90)
+	hit = false
 	show()
 	
 func despawn() -> void:
 	hide()
 	
 func _process(delta: float) -> void:
-	global_position += move_direction * speed * delta
+	if not hit:
+		var collision = move_and_collide(move_direction * speed * delta)
+		if collision:
+			hit = true
+			global_position += move_direction * 10
+			print("Hit wall at: ", collision.get_position())
+			print("Wall normal: ", collision.get_normal())
+
+func wallHit(wall: Node2D) -> void:
+	hit = true;
+	
