@@ -78,4 +78,3 @@ script = ExtResource("3_fvtld")
 grapleHead = NodePath("GrapleHead")
 
 [node name="GrapleHead" parent="GrapleComponent" unique_id=1909178509 instance=ExtResource("4_ct4mp")]
-position = Vector2(-79.908676, -16)
