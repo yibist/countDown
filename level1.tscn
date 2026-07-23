@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ck3j3v4257r4y"]
 
-[ext_resource type="PackedScene" uid="uid://ckrag6qa4otci" path="res://scene/player.tscn" id="1_jwv3a"]
+[ext_resource type="PackedScene" uid="uid://ckrag6qa4otci" path="res://scenes/player.tscn" id="1_jwv3a"]
 [ext_resource type="Texture2D" uid="uid://calirm1malddv" path="res://assets/menu_background.svg" id="2_dopym"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5jg4h"]

@@ -14,6 +14,10 @@ config/name="countDown"
 run/main_scene="uid://mh51cbgar6w"
 config/features=PackedStringArray("4.7", "Forward Plus")
 
+[autoload]
+
+SceneLoader="*uid://kepwtdd40y48"
+
 [display]
 
 window/stretch/mode="canvas_items"
