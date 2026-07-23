@@ -15,7 +15,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 
 	var direction := Input.get_axis("moveLeft", "moveRight")
-	if direction:
+	if direction && velocity.x < SPEED || velocity.x > -SPEED:
 		velocity.x = move_toward(velocity.x, direction * SPEED, ACCELERATION)
 	elif is_on_floor():
 		velocity.x = move_toward(velocity.x, 0, FRICTION)
