@@ -13,11 +13,15 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-
+		
+		
 	var direction := Input.get_axis("moveLeft", "moveRight")
 	if direction && abs(velocity.x) <= SPEED:
 		velocity.x = move_toward(velocity.x, direction * SPEED, ACCELERATION)
-	elif is_on_floor():
+		
+	elif is_on_floor() and not Input.is_action_pressed("jump"):
 		velocity.x = move_toward(velocity.x, 0, FRICTION)
+		
+	
 
 	move_and_slide()
