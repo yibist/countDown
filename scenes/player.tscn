@@ -59,9 +59,15 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="CharacterBody2D" unique_id=1029642626 node_paths=PackedStringArray("grapleHead")]
+[sub_resource type="Curve" id="Curve_d8717"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, -200), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Player" type="CharacterBody2D" unique_id=1029642626 node_paths=PackedStringArray("grapleHead", "landParticles")]
 script = ExtResource("1_onrkg")
 grapleHead = NodePath("GrapleComponent/GrapleHead")
+landParticles = NodePath("CPUParticles2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=132594744]
 shape = SubResource("CircleShape2D_5jg4h")
@@ -82,3 +88,24 @@ grapleHead = NodePath("GrapleHead")
 position = Vector2(0, 2)
 scale = Vector2(2.2831051, 2)
 player = NodePath("../..")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=484552204]
+position = Vector2(0, 30)
+emitting = false
+amount = 34
+lifetime = 0.59
+one_shot = true
+speed_scale = 1.15
+explosiveness = 0.96
+lifetime_randomness = 0.13
+emission_shape = 3
+emission_rect_extents = Vector2(4, 0)
+direction = Vector2(-0.5, -1)
+spread = 67.04
+gravity = Vector2(0, 0)
+initial_velocity_min = 59.41
+initial_velocity_max = 148.51
+linear_accel_min = 1.0
+linear_accel_max = 2.0
+linear_accel_curve = SubResource("Curve_d8717")
+color = Color(0, 0, 0, 1)

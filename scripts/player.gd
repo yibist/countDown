@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var grapleHead: CharacterBody2D
+@export var landParticles: CPUParticles2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const ACCELERATION = 20.0  
@@ -42,8 +43,21 @@ func _physics_process(delta: float) -> void:
 		global_position = hookPoint + directionToHook * maxLength
 	else:
 		if direction:
-			velocity.x = move_toward(velocity.x, direction * SPEED, ACCELERATION)
+			if is_on_floor():
+				velocity.x = move_toward(velocity.x, direction * SPEED, ACCELERATION)
+			elif abs(velocity.x) <= SPEED:
+				velocity.x = move_toward(velocity.x, direction * SPEED, ACCELERATION)
+			elif velocity.x > SPEED and direction < 0:
+				velocity.x = move_toward(velocity.x, direction * SPEED, ACCELERATION)
+			elif velocity.x < -SPEED and direction > 0:
+				velocity.x = move_toward(velocity.x, direction * SPEED, ACCELERATION)
+				
 		elif is_on_floor():
 			velocity.x = move_toward(velocity.x, 0, FRICTION)
 	
+	if Input.is_action_just_pressed("dash"):
+		var currentSpeed = velocity.length()
+		var mousePos = get_global_mouse_position()
+		var mouseDir = (mousePos - global_position).normalized()
+		velocity = mouseDir * (max(currentSpeed,SPEED) + 100)
 	move_and_slide()
