@@ -1,0 +1,32 @@
+[gd_scene format=4 uid="uid://bmk28sfrq16ib"]
+
+[ext_resource type="Texture2D" uid="uid://ds16d76tlwkb5" path="res://assets/tile_set_test.png" id="1_ksju7"]
+[ext_resource type="PackedScene" uid="uid://ckrag6qa4otci" path="res://scenes/player.tscn" id="2_6iamk"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nsrm0"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6iamk"]
+texture = ExtResource("1_ksju7")
+texture_region_size = Vector2i(100, 100)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, 50, -25, 0, 25, 0, 50, 50)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(50, -50, 50, 50, -50, 50)
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_01chu"]
+tile_size = Vector2i(100, 100)
+physics_layer_0/collision_layer = 1
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_nsrm0")
+sources/0 = SubResource("TileSetAtlasSource_6iamk")
+
+[node name="Level1" type="Node2D" unique_id=113812367]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1955158017]
+tile_map_data = PackedByteArray("AAAAAAYAAAAAAAAAAAABAAYAAAAAAAAAAAACAAYAAAAAAAAAAAADAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAAFAAYAAAAAAAAAAAAGAAYAAAAAAAAAAAAHAAYAAAAAAAAAAAAIAAYAAAAAAAAAAAAJAAYAAAAAAAAAAAAKAAYAAAAAAAAAAAALAAYAAAAAAAAAAAAEAAUAAAAAAAEAAAAFAAUAAAAAAAAAAAAGAAUAAAAAAAAAAAAIAAUAAAABAAEAAAAJAAUAAAABAAEAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAEAAAABAAAAAAAAAAIAAAABAAAAAAAAAAMAAAABAAAAAAAAAAQAAAABAAAAAAAAAAUAAAABAAAAAAABAAUAAAABAAAAAAABAAQAAAABAAAAAAABAAMAAAABAAAAAAABAAIAAAABAAAAAAABAAEAAAABAAAAAAACAAIAAAABAAAAAAACAAMAAAABAAAAAAACAAQAAAABAAAAAAACAAUAAAABAAAAAAADAAUAAAABAAAAAAACAAEAAAABAAAAAAADAAIAAAABAAAAAAADAAMAAAABAAAAAAADAAQAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_01chu")
+
+[node name="Player" parent="." unique_id=1029642626 instance=ExtResource("2_6iamk")]
+position = Vector2(550, 451)

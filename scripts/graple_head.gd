@@ -1,9 +1,12 @@
 extends CharacterBody2D
 
+@export var player: CharacterBody2D
 @export var speed: float = 2000.0  
 var move_direction: Vector2
 var hit: bool = false
 var rope: PinJoint2D;
+var ropeLength: float;
+var reeling: bool = false
 
 func _ready() -> void:
 	top_level = true;
@@ -23,17 +26,26 @@ func spawn() -> void:
 	show()
 	
 func despawn() -> void:
+	hit = false
+	global_position = Vector2(-100000,-100000)
 	hide()
 	
 func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("ungraple"):
+		despawn()
+	if Input.is_action_just_pressed("reelInGrapleHook"):
+		reeling = true
+	if Input.is_action_just_released("reelInGrapleHook"):
+		reeling = false
+		
+	if reeling:
+		ropeLength -= delta * 200
+		if ropeLength < 50:
+			ropeLength = 50
+			
 	if not hit:
 		var collision = move_and_collide(move_direction * speed * delta)
 		if collision:
 			hit = true
+			ropeLength = global_position.distance_to(player.global_position)
 			global_position += move_direction * 10
-			print("Hit wall at: ", collision.get_position())
-			print("Wall normal: ", collision.get_normal())
-
-func wallHit(wall: Node2D) -> void:
-	hit = true;
-	

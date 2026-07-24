@@ -1,0 +1,185 @@
+[gd_scene format=3 uid="uid://d3s7iguagvhft"]
+
+[ext_resource type="Texture2D" uid="uid://cw07p3lmn2ksa" path="res://assets/level_selection_background.png" id="1_u1g2d"]
+[ext_resource type="Texture2D" uid="uid://bvwcxu1tfpaed" path="res://assets/level_selection_button_icon.png" id="2_gswpo"]
+[ext_resource type="Script" uid="uid://cgx186vfth6x7" path="res://scripts/level_buttons/button.gd" id="3_3rh63"]
+[ext_resource type="Script" uid="uid://bxi2e7s1vp3du" path="res://scripts/level_buttons/button_test.gd" id="4_tuscg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gswpo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3rh63"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tuscg"]
+
+[node name="LevelSelection" type="Control" unique_id=1062684449]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="." unique_id=202124807]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_u1g2d")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1370108732]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 312.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=1975026014]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 60
+text = "Level Selection"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=1859247061]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -484.0
+offset_top = -131.0
+offset_right = 488.0
+offset_bottom = 238.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer2" unique_id=1385953317]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 5
+
+[node name="Button" type="Button" parent="MarginContainer2/GridContainer" unique_id=1842193017]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gswpo")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3rh63")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tuscg")
+text = "1"
+icon = ExtResource("2_gswpo")
+icon_alignment = 1
+script = ExtResource("3_3rh63")
+level = &"res://scenes/levels/level_1.tscn"
+
+[node name="Button2" type="Button" parent="MarginContainer2/GridContainer" unique_id=1329413551]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gswpo")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3rh63")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tuscg")
+text = "2"
+icon = ExtResource("2_gswpo")
+icon_alignment = 1
+
+[node name="Button3" type="Button" parent="MarginContainer2/GridContainer" unique_id=1081054929]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gswpo")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3rh63")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tuscg")
+text = "3"
+icon = ExtResource("2_gswpo")
+icon_alignment = 1
+
+[node name="Button4" type="Button" parent="MarginContainer2/GridContainer" unique_id=916829349]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gswpo")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3rh63")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tuscg")
+text = "4"
+icon = ExtResource("2_gswpo")
+icon_alignment = 1
+
+[node name="Button5" type="Button" parent="MarginContainer2/GridContainer" unique_id=991042621]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gswpo")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3rh63")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tuscg")
+text = "5"
+icon = ExtResource("2_gswpo")
+icon_alignment = 1
+
+[node name="Button6" type="Button" parent="MarginContainer2/GridContainer" unique_id=803075877]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gswpo")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3rh63")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tuscg")
+text = "6"
+icon = ExtResource("2_gswpo")
+icon_alignment = 1
+
+[node name="Button7" type="Button" parent="MarginContainer2/GridContainer" unique_id=107399877]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gswpo")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3rh63")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tuscg")
+text = "7"
+icon = ExtResource("2_gswpo")
+icon_alignment = 1
+
+[node name="Button8" type="Button" parent="MarginContainer2/GridContainer" unique_id=1198080991]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gswpo")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3rh63")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tuscg")
+text = "8"
+icon = ExtResource("2_gswpo")
+icon_alignment = 1
+
+[node name="Button9" type="Button" parent="MarginContainer2/GridContainer" unique_id=1219743572]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gswpo")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3rh63")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tuscg")
+text = "9"
+icon = ExtResource("2_gswpo")
+icon_alignment = 1
+
+[node name="Button10" type="Button" parent="MarginContainer2/GridContainer" unique_id=631480382]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gswpo")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3rh63")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tuscg")
+text = "10"
+icon = ExtResource("2_gswpo")
+icon_alignment = 1
+
+[node name="Button11" type="Button" parent="." unique_id=267681155]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 347.0
+offset_right = 852.0
+offset_bottom = 410.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gswpo")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3rh63")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tuscg")
+text = "Test
+Level"
+icon = ExtResource("2_gswpo")
+icon_alignment = 1
+script = ExtResource("4_tuscg")
+level = &"res://scenes/levels/level_test.tscn"
+
+[connection signal="pressed" from="MarginContainer2/GridContainer/Button" to="MarginContainer2/GridContainer/Button" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer2/GridContainer/Button2" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer2/GridContainer/Button3" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer2/GridContainer/Button4" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer2/GridContainer/Button5" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer2/GridContainer/Button6" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer2/GridContainer/Button7" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer2/GridContainer/Button8" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer2/GridContainer/Button9" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer2/GridContainer/Button10" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button11" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button11" to="Button11" method="_on_pressed"]

@@ -19,18 +19,18 @@ position = Vector2(371, 474)
 shape = SubResource("WorldBoundaryShape2D_5jg4h")
 
 [node name="Player" parent="." unique_id=1029642626 instance=ExtResource("1_jwv3a")]
-position = Vector2(63, 52)
+position = Vector2(64, 43)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=738723874]
 collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=149417009]
-position = Vector2(247.5, 44.5)
+position = Vector2(369.5, 149.49997)
 shape = SubResource("RectangleShape2D_it6un")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=756394003]
-position = Vector2(247.5, 44.50003)
+position = Vector2(369.5, 149.5)
 scale = Vector2(0.16896121, 0.15657622)
 texture = ExtResource("2_dopym")
 

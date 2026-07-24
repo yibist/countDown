@@ -11,9 +11,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0wfyh")
-test_scene = &"res://level1.tscn"
+start_scene = &"res://scenes/level_selection.tscn"
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=984572955]
+[node name="Background" type="TextureRect" parent="." unique_id=984572955]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
