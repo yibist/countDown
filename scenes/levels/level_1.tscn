@@ -18,7 +18,7 @@ texture_region_size = Vector2i(100, 100)
 
 [sub_resource type="TileSet" id="TileSet_01chu"]
 tile_size = Vector2i(100, 100)
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 2
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_nsrm0")
 sources/0 = SubResource("TileSetAtlasSource_6iamk")
 
@@ -29,4 +29,4 @@ tile_map_data = PackedByteArray("AAAAAAYAAAAAAAAAAAABAAYAAAAAAAAAAAACAAYAAAAAAAA
 tile_set = SubResource("TileSet_01chu")
 
 [node name="Player" parent="." unique_id=1029642626 instance=ExtResource("2_6iamk")]
-position = Vector2(550, 451)
+position = Vector2(586, 350)

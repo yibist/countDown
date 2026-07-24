@@ -65,6 +65,7 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, -200), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [node name="Player" type="CharacterBody2D" unique_id=1029642626 node_paths=PackedStringArray("grapleHead", "landParticles")]
+collision_mask = 2
 script = ExtResource("1_onrkg")
 grapleHead = NodePath("GrapleComponent/GrapleHead")
 landParticles = NodePath("CPUParticles2D")
@@ -87,6 +88,7 @@ grapleHead = NodePath("GrapleHead")
 [node name="GrapleHead" parent="GrapleComponent" unique_id=285944462 node_paths=PackedStringArray("player") instance=ExtResource("5_qlg0r")]
 position = Vector2(0, 2)
 scale = Vector2(2.2831051, 2)
+collision_mask = 2
 player = NodePath("../..")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=484552204]
@@ -109,3 +111,5 @@ linear_accel_min = 1.0
 linear_accel_max = 2.0
 linear_accel_curve = SubResource("Curve_d8717")
 color = Color(0, 0, 0, 1)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2133775887]
