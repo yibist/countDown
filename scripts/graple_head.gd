@@ -6,6 +6,7 @@ var move_direction: Vector2
 var hit: bool = false
 var rope: PinJoint2D;
 var ropeLength: float;
+var reeling: bool = false
 
 func _ready() -> void:
 	top_level = true;
@@ -32,12 +33,16 @@ func despawn() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ungraple"):
 		despawn()
-	if Input.is_action_pressed("reelInGrapleHook"):
+	if Input.is_action_just_pressed("reelInGrapleHook"):
+		reeling = true
+	if Input.is_action_just_released("reelInGrapleHook"):
+		reeling = false
 		
+	if reeling:
 		ropeLength -= delta * 200
 		if ropeLength < 50:
 			ropeLength = 50
-	print(hit)
+			
 	if not hit:
 		var collision = move_and_collide(move_direction * speed * delta)
 		if collision:
