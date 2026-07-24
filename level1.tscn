@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ckrag6qa4otci" path="res://scenes/player.tscn" id="1_jwv3a"]
 [ext_resource type="Texture2D" uid="uid://calirm1malddv" path="res://assets/menu_background.svg" id="2_dopym"]
+[ext_resource type="PackedScene" uid="uid://dsuid2ixlda8i" path="res://scenes/loseArea.tscn" id="3_ootpb"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5jg4h"]
 distance = -93.0
@@ -32,3 +33,5 @@ shape = SubResource("RectangleShape2D_it6un")
 position = Vector2(247.5, 44.50003)
 scale = Vector2(0.16896121, 0.15657622)
 texture = ExtResource("2_dopym")
+
+[node name="LoseArea" parent="." unique_id=1718952081 instance=ExtResource("3_ootpb")]

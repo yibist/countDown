@@ -1,7 +1,7 @@
 extends CollisionShape2D
 
 @export var growthRateStart := 100.0
-@export var growthRateGrowth := 1.005
+@export var growthRateGrowth := 1.01
 @export var levelHeight := 1000.0
 @export var levelLength := 1000.0
 @export var waitPeriod := 5000

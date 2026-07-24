@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.7", "Forward Plus")
 [autoload]
 
 SceneLoader="*uid://kepwtdd40y48"
+GlobalEventBus="*uid://bioajqkyfmxj7"
 
 [display]
 
