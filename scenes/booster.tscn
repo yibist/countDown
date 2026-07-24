@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dihmip03ex4c4"]
+
+[ext_resource type="Script" uid="uid://xe481sruk8hv" path="res://scripts/booster.gd" id="1_uqn0s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xlbb6"]
+size = Vector2(81, 76)
+
+[node name="Booster" type="Area2D" unique_id=2052080302]
+script = ExtResource("1_uqn0s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1813404102]
+shape = SubResource("RectangleShape2D_xlbb6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
