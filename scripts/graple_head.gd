@@ -20,8 +20,6 @@ var reelAmount: float = 0
 var segmentsRemoved: int = 0
 var segmentSpacing: float = 20.0
 
-
-
 func _ready() -> void:
 	top_level = true;
 	line.top_level = true;

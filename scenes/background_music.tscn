@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bfphysbata6ng"]
+
+[ext_resource type="AudioStream" uid="uid://bndr03emlb4pl" path="res://assets/audio/music/drum 1.mp3" id="1_83psx"]
+[ext_resource type="AudioStream" uid="uid://d1mrex4si7bn4" path="res://assets/audio/music/drum 2.mp3" id="2_vjuvc"]
+[ext_resource type="Script" uid="uid://dimrh4yldrltg" path="res://scenes/background_music.gd" id="2_xlhw1"]
+[ext_resource type="AudioStream" uid="uid://ghe020bja8r7" path="res://assets/audio/music/drum 3.mp3" id="3_xlhw1"]
+[ext_resource type="AudioStream" uid="uid://j1imgm58r5me" path="res://assets/audio/music/bass 1.mp3" id="4_vjuvc"]
+[ext_resource type="AudioStream" uid="uid://c8ica5pf3tmla" path="res://assets/audio/music/synth 1.mp3" id="6_ijhdc"]
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" unique_id=1459829832 node_paths=PackedStringArray("drum2", "drum3", "bass1", "synth1")]
+stream = ExtResource("1_83psx")
+volume_db = -8.374
+autoplay = true
+script = ExtResource("2_xlhw1")
+drum2 = NodePath("drum 2")
+drum3 = NodePath("drum 3")
+bass1 = NodePath("bass 1")
+synth1 = NodePath("synth 1")
+
+[node name="drum 2" type="AudioStreamPlayer2D" parent="." unique_id=1484368741]
+stream = ExtResource("2_vjuvc")
+volume_db = -3.25
+
+[node name="drum 3" type="AudioStreamPlayer2D" parent="." unique_id=766737466]
+stream = ExtResource("3_xlhw1")
+volume_db = -3.61
+
+[node name="bass 1" type="AudioStreamPlayer2D" parent="." unique_id=1862119107]
+stream = ExtResource("4_vjuvc")
+
+[node name="synth 1" type="AudioStreamPlayer2D" parent="." unique_id=619279812]
+stream = ExtResource("6_ijhdc")
+
+[connection signal="finished" from="." to="." method="_on_finished"]
