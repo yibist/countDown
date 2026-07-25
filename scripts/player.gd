@@ -3,6 +3,8 @@ extends CharacterBody2D
 @export var grapleHead: CharacterBody2D
 @export var landParticles: CPUParticles2D
 @export var sprite: Sprite2D
+@export var landingSound: AudioStreamPlayer2D
+
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const ACCELERATION = 20.0  
@@ -82,18 +84,18 @@ func emit_land_particles(currentVelocity:Vector2):
 		var collision = get_slide_collision(i)
 		if collision == null:
 			continue
-		
 		var collisionNormal = collision.get_normal()
 		var collisionPoint = collision.get_position()
 		
 		var impactSpeed = currentVelocity.dot(-collisionNormal)
 		
-		if impactSpeed > 500:
+		if impactSpeed > 400:
 			spawn_particles(collisionPoint, collisionNormal, impactSpeed)
 
 func spawn_particles(position: Vector2, normal: Vector2, impactSpeed: float = 0.0):
-	if landParticles == null:
-		return
+	landingSound.pitch_scale = randf_range(0.7, 1.3)
+	landingSound.volume_db = min(-20 + impactSpeed / 100, -1)
+	landingSound.play()
 	
 	landParticles.global_position = position
 	landParticles.rotation = normal.angle() + PI/2

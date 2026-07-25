@@ -23,4 +23,5 @@ func _process(delta: float) -> void:
 
 func fireGrapleHook() -> void:
 	if grapleHead:
+		grapleHead.despawn()
 		grapleHead.spawn()

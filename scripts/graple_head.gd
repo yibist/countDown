@@ -5,6 +5,8 @@ extends CharacterBody2D
 @export var speed: float = 2000.0  
 @export var ropeSegment: PackedScene
 @export var ropeEnd: PackedScene
+@export var landingSound: AudioStreamPlayer2D
+
 
 var move_direction: Vector2
 var hit: bool = false
@@ -36,7 +38,6 @@ func spawn() -> void:
 	
 	look_at(global_position + move_direction)
 	rotation += deg_to_rad(90)
-	hit = false
 	show()
 	
 func despawn() -> void:
@@ -93,6 +94,8 @@ func _process(delta: float) -> void:
 			hit = true
 			ropeLength = global_position.distance_to(player.global_position)
 			global_position += move_direction * 10
+			landingSound.pitch_scale = randf_range(0.7, 1.3)
+			landingSound.play()
 			var startPos = global_position
 			var endPos = player.global_position
 			var distance = startPos.distance_to(endPos)

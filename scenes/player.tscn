@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://dq5xeiagiaii6" path="res://scripts/graple.gd" id="3_fvtld"]
 [ext_resource type="Texture2D" uid="uid://ccci3k74ftous" path="res://assets/arrowDirection.png" id="3_s4jxa"]
 [ext_resource type="PackedScene" uid="uid://c23kslkfpouqr" path="res://scenes/graple_head.tscn" id="5_qlg0r"]
+[ext_resource type="AudioStream" uid="uid://cj1g7peupf8kd" path="res://assets/audio/universfield-impact-thud-291047.mp3" id="6_tuyoq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5jg4h"]
 radius = 30.0
@@ -68,12 +69,13 @@ point_count = 2
 _data = [Vector2(0, 0.76208174), 0.0, 0.0, 0, 0, Vector2(1e-05, 1), 0.0, 0.0, 0, 0, Vector2(0.99999, 0.49999994), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 4
 
-[node name="Player" type="CharacterBody2D" unique_id=1029642626 node_paths=PackedStringArray("grapleHead", "landParticles", "sprite")]
+[node name="Player" type="CharacterBody2D" unique_id=1029642626 node_paths=PackedStringArray("grapleHead", "landParticles", "sprite", "landingSound")]
 collision_mask = 2
 script = ExtResource("1_onrkg")
 grapleHead = NodePath("GrapleComponent/GrapleHead")
 landParticles = NodePath("CPUParticles2D")
 sprite = NodePath("Sprite2D")
+landingSound = NodePath("LandingSound")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=132594744]
 shape = SubResource("CircleShape2D_5jg4h")
@@ -122,3 +124,7 @@ hue_variation_min = -0.18
 hue_variation_max = 0.17
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2133775887]
+
+[node name="LandingSound" type="AudioStreamPlayer2D" parent="." unique_id=663418465]
+stream = ExtResource("6_tuyoq")
+volume_db = -20.0
