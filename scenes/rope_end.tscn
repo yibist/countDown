@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b2uog6co2f5h3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lpxcn"]
+radius = 1.0
+
+[node name="RopeEnd" type="StaticBody2D" unique_id=1558230640]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=886651001]
+shape = SubResource("CircleShape2D_lpxcn")

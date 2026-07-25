@@ -1,10 +1,17 @@
 [gd_scene format=3 uid="uid://c23kslkfpouqr"]
 
 [ext_resource type="Script" uid="uid://b0mnsy1biixr" path="res://scripts/graple_head.gd" id="1_1dgco"]
+[ext_resource type="PackedScene" uid="uid://c0lejdvdjeqty" path="res://scenes/rope_segment.tscn" id="2_2165k"]
 [ext_resource type="Texture2D" uid="uid://bd42rpui55hmq" path="res://assets/arrowHead.png" id="2_ryalu"]
+[ext_resource type="PackedScene" uid="uid://b2uog6co2f5h3" path="res://scenes/rope_end.tscn" id="3_2165k"]
 
-[node name="GrapleHead" type="CharacterBody2D" unique_id=285944462]
+[node name="GrapleHead" type="CharacterBody2D" unique_id=285944462 node_paths=PackedStringArray("line")]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_1dgco")
+line = NodePath("Line2D")
+ropeSegment = ExtResource("2_2165k")
+ropeEnd = ExtResource("3_2165k")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1229617778]
 polygon = PackedVector2Array(0, -4, 2, 3, -2, 3)
@@ -12,3 +19,8 @@ polygon = PackedVector2Array(0, -4, 2, 3, -2, 3)
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=358909058]
 scale = Vector2(0.28125, 0.28125)
 texture = ExtResource("2_ryalu")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=766503499]
+points = PackedVector2Array(46, -7)
+width = 1.0
+default_color = Color(1, 0, 0, 1)

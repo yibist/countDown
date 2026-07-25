@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://c0lejdvdjeqty"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5jg4h"]
+radius = 1.0
+
+[node name="RopeSegment" type="RigidBody2D" unique_id=340789852]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=262052138]
+shape = SubResource("CircleShape2D_5jg4h")
