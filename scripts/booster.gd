@@ -4,9 +4,6 @@ extends Area2D
 @export var direction := 0
 @export var boostAmount := 5000
 
-func _ready() -> void:
-	pass
-
 func _on_body_entered(body:Node2D):
 	if (body.name == playerBodyName):
 		if (direction == 0):
