@@ -6,6 +6,6 @@ func _ready():
 	GlobalEventBus.playerWin.connect(_on_player_win)
 
 func _on_player_win():
-	timerLabel.text = "Time Passed: " + timer.getTime()
+	timerLabel.text = timer.getTime()
 	get_tree().paused = true
 	visible = true

@@ -6,7 +6,6 @@ func _ready():
 	GlobalEventBus.playerDeath.connect(_on_player_death)
 
 func _on_player_death():
-	timerLabel.text = "Time Passed: " + timer.getTime()
-	print("Player died!")
+	timerLabel.text = timer.getTime()
 	get_tree().paused = true
 	visible = true

@@ -117,6 +117,11 @@ func update_wheel_rotation(delta:float):
 	sprite.rotation += angularVelocity * delta
 	
 	
+	
+func despawn():
+	grapleHead.despawn()
+	
+	
 		
 		
 		

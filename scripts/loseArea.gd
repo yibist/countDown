@@ -39,7 +39,7 @@ func _process(delta: float) -> void:
 			growthProgress = 1.0
 			isGrowing = false
 		
-		var easedProgress: float = (exp(growthProgress * 10.0) - 1.0) / (exp(10.0) - 1.0)
+		var easedProgress: float = (exp(growthProgress * 5.0) - 1.0) / (exp(5.0) - 1.0)
 		var currentWidth: float = startWidth + (levelLength - startWidth) * easedProgress
 		
 		$CollisionShape2D.shape.size.x = currentWidth
