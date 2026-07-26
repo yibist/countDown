@@ -67,7 +67,7 @@ size = Vector2(253.79303, 20)
 size = Vector2(863, 102.86719)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d8717"]
-size = Vector2(267.53406, 1020.1307)
+size = Vector2(699.767, 1020.1307)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qo4wk"]
 size = Vector2(4665.534, 400)
@@ -170,7 +170,7 @@ tile_set = SubResource("TileSet_01chu")
 script = ExtResource("2_suw5h")
 
 [node name="Player" parent="." unique_id=1029642626 instance=ExtResource("3_g1cvr")]
-position = Vector2(7475, 1352)
+position = Vector2(155, 1073)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1101476983]
 
@@ -257,7 +257,7 @@ shape = SubResource("RectangleShape2D_5a8pl")
 position = Vector2(-735.53406, 501.86932)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrappleDelete" unique_id=1235713756]
-position = Vector2(601.53406, 519.1307)
+position = Vector2(385.41757, 519.1307)
 shape = SubResource("RectangleShape2D_d8717")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="GrappleDelete" unique_id=788034258]
