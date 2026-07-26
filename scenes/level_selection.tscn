@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cw07p3lmn2ksa" path="res://assets/level_selection_background.png" id="1_u1g2d"]
 [ext_resource type="Texture2D" uid="uid://bvwcxu1tfpaed" path="res://assets/level_selection_button_icon.png" id="2_gswpo"]
 [ext_resource type="Script" uid="uid://cgx186vfth6x7" path="res://scripts/level_buttons/button.gd" id="3_3rh63"]
+[ext_resource type="Script" uid="uid://opelveiia0gx" path="res://scripts/level_buttons/button_2.gd" id="4_rcujv"]
 [ext_resource type="Texture2D" uid="uid://biy6nckjbx0l4" path="res://assets/return_button.png" id="5_42rqe"]
 [ext_resource type="Script" uid="uid://byorxlrieovms" path="res://scripts/level_buttons/return.gd" id="6_rcujv"]
 
@@ -83,6 +84,8 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_tuscg")
 text = "2"
 icon = ExtResource("2_gswpo")
 icon_alignment = 1
+script = ExtResource("4_rcujv")
+level = &"res://scenes/levels/level_2.tscn"
 
 [node name="Button3" type="Button" parent="MarginContainer2/GridContainer" unique_id=1081054929]
 layout_mode = 2
@@ -172,6 +175,7 @@ main_menu_scene = &"res://scenes/main.tscn"
 
 [connection signal="pressed" from="MarginContainer2/GridContainer/Button" to="MarginContainer2/GridContainer/Button" method="_on_pressed"]
 [connection signal="pressed" from="MarginContainer2/GridContainer/Button2" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer2/GridContainer/Button2" to="MarginContainer2/GridContainer/Button2" method="_on_pressed"]
 [connection signal="pressed" from="MarginContainer2/GridContainer/Button3" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MarginContainer2/GridContainer/Button4" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MarginContainer2/GridContainer/Button5" to="." method="_on_button_pressed"]
