@@ -252,7 +252,7 @@ visible = false
 timer = NodePath("../timer")
 
 [node name="Player" parent="." unique_id=1029642626 instance=ExtResource("2_6iamk")]
-position = Vector2(6644, 1173)
+position = Vector2(320, 1248)
 floor_constant_speed = false
 
 [node name="Instructions" type="Node2D" parent="." unique_id=786933173]
