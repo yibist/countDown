@@ -1,6 +1,6 @@
 extends HBoxContainer
 
-@export var startTime: float = 10.0  # Starting time in seconds
+@export var startTime: float = 10.0
 @export var msLabel: Label
 @export var sLabel: Label
 
