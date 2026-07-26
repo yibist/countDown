@@ -76,7 +76,7 @@ boostAmount = 1000
 position = Vector2(1040, 368)
 
 [node name="WinArea2" parent="." unique_id=292997632 instance=ExtResource("5_sk5k4")]
-position = Vector2(1040, 400)
+position = Vector2(1040, 399)
 
 [node name="StopSign" parent="." unique_id=1477596005 instance=ExtResource("6_sk5k4")]
 position = Vector2(144, 480)

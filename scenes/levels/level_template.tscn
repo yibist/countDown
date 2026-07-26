@@ -4,7 +4,10 @@
 [ext_resource type="Script" uid="uid://bkunx6tigaxgx" path="res://scripts/barrier.gd" id="2_7hipx"]
 [ext_resource type="PackedScene" uid="uid://ckrag6qa4otci" path="res://scenes/player.tscn" id="3_gr3xe"]
 [ext_resource type="PackedScene" uid="uid://drmq771ev0wvo" path="res://scenes/timer.tscn" id="4_eokde"]
+[ext_resource type="PackedScene" uid="uid://dihmip03ex4c4" path="res://scenes/booster.tscn" id="4_qvykx"]
+[ext_resource type="PackedScene" uid="uid://0j703kbqacfi" path="res://scenes/WinArea.tscn" id="5_bujjw"]
 [ext_resource type="PackedScene" uid="uid://kqd0i232o0vn" path="res://scenes/game_over_screen.tscn" id="5_ulyey"]
+[ext_resource type="PackedScene" uid="uid://3p0y0lshbmry" path="res://scenes/stopSign.tscn" id="6_hq32h"]
 [ext_resource type="PackedScene" uid="uid://bafqxi7a6hnnh" path="res://scenes/win_screen.tscn" id="6_j81xe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gr3xe"]
@@ -50,6 +53,18 @@ script = ExtResource("2_7hipx")
 
 [node name="Player" parent="." unique_id=1029642626 instance=ExtResource("3_gr3xe")]
 position = Vector2(535, 350)
+
+[node name="Booster" parent="." unique_id=2052080302 instance=ExtResource("4_qvykx")]
+position = Vector2(336, 496)
+scale = Vector2(0.8, 0.8)
+direction = 1
+boostAmount = 1000
+
+[node name="WinArea" parent="." unique_id=1922633135 instance=ExtResource("5_bujjw")]
+position = Vector2(856, 446)
+
+[node name="StopSign" parent="." unique_id=1477596005 instance=ExtResource("6_hq32h")]
+position = Vector2(144, 480)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1101476983]
 
