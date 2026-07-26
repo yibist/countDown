@@ -47,6 +47,7 @@ scale_amount_curve = SubResource("Curve_it6un")
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=96313074]
+offset_left = -6247.0
 offset_top = -476.0
 offset_bottom = 1126.0
 color = Color(0, 0, 0, 1)

@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var playerBodyName: String = "graple"
+@export var playerBodyName: String = "Player"
 
 
 func _on_body_entered(body:Node2D):
