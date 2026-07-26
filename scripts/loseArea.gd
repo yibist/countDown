@@ -39,7 +39,7 @@ func _process(delta: float) -> void:
 			growthProgress = 1.0
 			isGrowing = false
 		
-		var easedProgress: float = (exp(growthProgress * 10.0) - 1.0) / (exp(10.0) - 1.0)
+		var easedProgress: float = (exp(growthProgress * 5.0) - 1.0) / (exp(5.0) - 1.0)
 		var currentWidth: float = startWidth + (levelLength - startWidth) * easedProgress
 		
 		$CollisionShape2D.shape.size.x = currentWidth
@@ -52,3 +52,23 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == playerBodyName:
 		GlobalEventBus.playerDeath.emit()
+		
+		
+func reset_all(new_growth_time: float) -> void:
+	growthTime = new_growth_time
+	
+	elapsedTime = 0.0
+	isWaiting = true
+	isGrowing = false
+	growthProgress = 0.0
+	
+	particles.emitting = false
+	
+	$CollisionShape2D.shape.size.x = startWidth
+	
+	if colorRect:
+		colorRect.size.x = startWidth / 2
+		particles.position.x = colorRect.size.x
+	if colorRect:
+		colorRect.size.x = startWidth / 2
+		particles.position.x = colorRect.size.x

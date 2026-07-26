@@ -3,7 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://cw07p3lmn2ksa" path="res://assets/level_selection_background.png" id="1_u1g2d"]
 [ext_resource type="Texture2D" uid="uid://bvwcxu1tfpaed" path="res://assets/level_selection_button_icon.png" id="2_gswpo"]
 [ext_resource type="Script" uid="uid://cgx186vfth6x7" path="res://scripts/level_buttons/button.gd" id="3_3rh63"]
+[ext_resource type="Script" uid="uid://opelveiia0gx" path="res://scripts/level_buttons/button_2.gd" id="4_rcujv"]
 [ext_resource type="Texture2D" uid="uid://biy6nckjbx0l4" path="res://assets/return_button.png" id="5_42rqe"]
+[ext_resource type="Script" uid="uid://cr3bcbdvai580" path="res://scripts/level_buttons/button_3.gd" id="5_efsdc"]
 [ext_resource type="Script" uid="uid://byorxlrieovms" path="res://scripts/level_buttons/return.gd" id="6_rcujv"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gswpo"]
@@ -83,6 +85,8 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_tuscg")
 text = "2"
 icon = ExtResource("2_gswpo")
 icon_alignment = 1
+script = ExtResource("4_rcujv")
+level = &"res://scenes/levels/level_2.tscn"
 
 [node name="Button3" type="Button" parent="MarginContainer2/GridContainer" unique_id=1081054929]
 layout_mode = 2
@@ -92,69 +96,8 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_tuscg")
 text = "3"
 icon = ExtResource("2_gswpo")
 icon_alignment = 1
-
-[node name="Button4" type="Button" parent="MarginContainer2/GridContainer" unique_id=916829349]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_gswpo")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_3rh63")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_tuscg")
-text = "4"
-icon = ExtResource("2_gswpo")
-icon_alignment = 1
-
-[node name="Button5" type="Button" parent="MarginContainer2/GridContainer" unique_id=991042621]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_gswpo")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_3rh63")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_tuscg")
-text = "5"
-icon = ExtResource("2_gswpo")
-icon_alignment = 1
-
-[node name="Button6" type="Button" parent="MarginContainer2/GridContainer" unique_id=803075877]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_gswpo")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_3rh63")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_tuscg")
-text = "6"
-icon = ExtResource("2_gswpo")
-icon_alignment = 1
-
-[node name="Button7" type="Button" parent="MarginContainer2/GridContainer" unique_id=107399877]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_gswpo")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_3rh63")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_tuscg")
-text = "7"
-icon = ExtResource("2_gswpo")
-icon_alignment = 1
-
-[node name="Button8" type="Button" parent="MarginContainer2/GridContainer" unique_id=1198080991]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_gswpo")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_3rh63")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_tuscg")
-text = "8"
-icon = ExtResource("2_gswpo")
-icon_alignment = 1
-
-[node name="Button9" type="Button" parent="MarginContainer2/GridContainer" unique_id=1219743572]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_gswpo")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_3rh63")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_tuscg")
-text = "9"
-icon = ExtResource("2_gswpo")
-icon_alignment = 1
-
-[node name="Button10" type="Button" parent="MarginContainer2/GridContainer" unique_id=631480382]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_gswpo")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_3rh63")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_tuscg")
-text = "10"
-icon = ExtResource("2_gswpo")
-icon_alignment = 1
+script = ExtResource("5_efsdc")
+level = &"res://scenes/levels/level_loop.tscn"
 
 [node name="Return" type="Button" parent="." unique_id=173654154]
 layout_mode = 0
@@ -172,12 +115,7 @@ main_menu_scene = &"res://scenes/main.tscn"
 
 [connection signal="pressed" from="MarginContainer2/GridContainer/Button" to="MarginContainer2/GridContainer/Button" method="_on_pressed"]
 [connection signal="pressed" from="MarginContainer2/GridContainer/Button2" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer2/GridContainer/Button2" to="MarginContainer2/GridContainer/Button2" method="_on_pressed"]
 [connection signal="pressed" from="MarginContainer2/GridContainer/Button3" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="MarginContainer2/GridContainer/Button4" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="MarginContainer2/GridContainer/Button5" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="MarginContainer2/GridContainer/Button6" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="MarginContainer2/GridContainer/Button7" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="MarginContainer2/GridContainer/Button8" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="MarginContainer2/GridContainer/Button9" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="MarginContainer2/GridContainer/Button10" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer2/GridContainer/Button3" to="MarginContainer2/GridContainer/Button3" method="_on_pressed"]
 [connection signal="pressed" from="Return" to="Return" method="_on_pressed"]
