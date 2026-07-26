@@ -1,10 +1,15 @@
 [gd_scene format=3 uid="uid://54dxgum6dtcv"]
 
+[ext_resource type="Texture2D" uid="uid://dindgr56nro8u" path="res://assets/background/city/parallaxcitysky.png" id="1_bujjw"]
 [ext_resource type="Texture2D" uid="uid://bm2jr3nhvtvl2" path="res://assets/terrain_atlas.png" id="1_eyte8"]
+[ext_resource type="Texture2D" uid="uid://dra6ex4atlo3h" path="res://assets/background/city/parallaxcitywater.png" id="1_fwulr"]
 [ext_resource type="Script" uid="uid://bkunx6tigaxgx" path="res://scripts/barrier.gd" id="2_7hipx"]
 [ext_resource type="PackedScene" uid="uid://ckrag6qa4otci" path="res://scenes/player.tscn" id="3_gr3xe"]
+[ext_resource type="Texture2D" uid="uid://bmo3qh7se0sf1" path="res://assets/background/city/parallaxcitybackgroundmountain.png" id="3_i403b"]
+[ext_resource type="Texture2D" uid="uid://i644s1x6nhc4" path="res://assets/background/city/parallaxcitybuildings.png" id="4_2l0hg"]
 [ext_resource type="PackedScene" uid="uid://drmq771ev0wvo" path="res://scenes/timer.tscn" id="4_eokde"]
 [ext_resource type="PackedScene" uid="uid://dihmip03ex4c4" path="res://scenes/booster.tscn" id="4_qvykx"]
+[ext_resource type="Texture2D" uid="uid://pn4g7miiwl6d" path="res://assets/background/city/parallaxcitywaterreflexion.png" id="5_7gsxw"]
 [ext_resource type="PackedScene" uid="uid://0j703kbqacfi" path="res://scenes/WinArea.tscn" id="5_bujjw"]
 [ext_resource type="PackedScene" uid="uid://kqd0i232o0vn" path="res://scenes/game_over_screen.tscn" id="5_ulyey"]
 [ext_resource type="PackedScene" uid="uid://3p0y0lshbmry" path="res://scenes/stopSign.tscn" id="6_hq32h"]
@@ -71,6 +76,54 @@ physics_layer_0/collision_layer = 4
 sources/0 = SubResource("TileSetAtlasSource_qvykx")
 
 [node name="LevelTemplate" type="Node2D" unique_id=1793895282]
+
+[node name="BackgroundCity" type="Node2D" parent="." unique_id=1328328834]
+
+[node name="Water" type="Parallax2D" parent="BackgroundCity" unique_id=449550229]
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(3800, 1200)
+repeat_times = 20
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundCity/Water" unique_id=1447150520]
+position = Vector2(1856, 624)
+texture = ExtResource("1_fwulr")
+
+[node name="Sky" type="Parallax2D" parent="BackgroundCity" unique_id=1764231128]
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(3800, 0)
+autoscroll = Vector2(30, 0)
+repeat_times = 20
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundCity/Sky" unique_id=1368820224]
+position = Vector2(1856, 624)
+texture = ExtResource("1_bujjw")
+
+[node name="Mountain" type="Parallax2D" parent="BackgroundCity" unique_id=1199067967]
+scroll_scale = Vector2(0.2, 0.2)
+repeat_size = Vector2(3800, 0)
+repeat_times = 20
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundCity/Mountain" unique_id=1672696883]
+position = Vector2(1856, 624)
+texture = ExtResource("3_i403b")
+
+[node name="City" type="Parallax2D" parent="BackgroundCity" unique_id=2117004239]
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(3800, 0)
+repeat_times = 20
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundCity/City" unique_id=1633402799]
+position = Vector2(1856, 624)
+texture = ExtResource("4_2l0hg")
+
+[node name="CityReflection" type="Parallax2D" parent="BackgroundCity" unique_id=290952316]
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(3800, 0)
+repeat_times = 20
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundCity/CityReflection" unique_id=2130841657]
+position = Vector2(1856, 624)
+texture = ExtResource("5_7gsxw")
 
 [node name="Background" type="TileMapLayer" parent="." unique_id=65355433]
 tile_set = SubResource("TileSet_01chu")
