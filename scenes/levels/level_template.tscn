@@ -14,6 +14,12 @@
 [ext_resource type="PackedScene" uid="uid://kqd0i232o0vn" path="res://scenes/game_over_screen.tscn" id="5_ulyey"]
 [ext_resource type="PackedScene" uid="uid://3p0y0lshbmry" path="res://scenes/stopSign.tscn" id="6_hq32h"]
 [ext_resource type="PackedScene" uid="uid://bafqxi7a6hnnh" path="res://scenes/win_screen.tscn" id="6_j81xe"]
+[ext_resource type="Texture2D" uid="uid://cke8w8l636v3m" path="res://assets/background/rural/ruralparallaxsky.png" id="6_mvorh"]
+[ext_resource type="Texture2D" uid="uid://dixe4n0g8oqo4" path="res://assets/background/rural/ruralparallaxclouds.png" id="7_hulh5"]
+[ext_resource type="Texture2D" uid="uid://b8fe3nkefe32g" path="res://assets/background/rural/ruralparallaxmountain.png" id="8_yw11j"]
+[ext_resource type="Texture2D" uid="uid://cvkvrgo6pauyi" path="res://assets/background/rural/ruralparallaxvillage.png" id="9_icp1j"]
+[ext_resource type="Texture2D" uid="uid://kop8vdyxpvce" path="res://assets/background/rural/ruralparallaxriver.png" id="10_4gpp4"]
+[ext_resource type="Texture2D" uid="uid://cxym5h2ac604n" path="res://assets/background/rural/ruralparallaxriverfront.png" id="11_rdr40"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gr3xe"]
 texture = ExtResource("1_eyte8")
@@ -78,6 +84,7 @@ sources/0 = SubResource("TileSetAtlasSource_qvykx")
 [node name="LevelTemplate" type="Node2D" unique_id=1793895282]
 
 [node name="BackgroundCity" type="Node2D" parent="." unique_id=1328328834]
+visible = false
 
 [node name="Water" type="Parallax2D" parent="BackgroundCity" unique_id=449550229]
 scroll_scale = Vector2(0.1, 0.1)
@@ -125,6 +132,63 @@ repeat_times = 20
 position = Vector2(1856, 624)
 texture = ExtResource("5_7gsxw")
 
+[node name="BackgroundRural" type="Node2D" parent="." unique_id=989144655]
+
+[node name="Sky" type="Parallax2D" parent="BackgroundRural" unique_id=1643528401]
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(3800, 0)
+repeat_times = 20
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundRural/Sky" unique_id=1926523591]
+position = Vector2(1856, 624)
+texture = ExtResource("6_mvorh")
+
+[node name="Clouds" type="Parallax2D" parent="BackgroundRural" unique_id=960330802]
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(3800, 0)
+autoscroll = Vector2(30, 0)
+repeat_times = 20
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundRural/Clouds" unique_id=1272020032]
+position = Vector2(1856, 624)
+texture = ExtResource("7_hulh5")
+
+[node name="Mountain" type="Parallax2D" parent="BackgroundRural" unique_id=673287951]
+scroll_scale = Vector2(0.2, 0.2)
+repeat_size = Vector2(3800, 0)
+repeat_times = 20
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundRural/Mountain" unique_id=1477211488]
+position = Vector2(1856, 624)
+texture = ExtResource("8_yw11j")
+
+[node name="Village" type="Parallax2D" parent="BackgroundRural" unique_id=176516796]
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(3800, 0)
+repeat_times = 20
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundRural/Village" unique_id=617957412]
+position = Vector2(1856, 624)
+texture = ExtResource("9_icp1j")
+
+[node name="River" type="Parallax2D" parent="BackgroundRural" unique_id=1917162516]
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(3800, 0)
+repeat_times = 20
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundRural/River" unique_id=1530395800]
+position = Vector2(1856, 624)
+texture = ExtResource("10_4gpp4")
+
+[node name="River2" type="Parallax2D" parent="BackgroundRural" unique_id=1336505464]
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(3800, 0)
+repeat_times = 20
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundRural/River2" unique_id=1194441456]
+position = Vector2(1856, 624)
+texture = ExtResource("11_rdr40")
+
 [node name="Background" type="TileMapLayer" parent="." unique_id=65355433]
 tile_set = SubResource("TileSet_01chu")
 
@@ -136,7 +200,7 @@ tile_set = SubResource("TileSet_bujjw")
 script = ExtResource("2_7hipx")
 
 [node name="Player" parent="." unique_id=1029642626 instance=ExtResource("3_gr3xe")]
-position = Vector2(535, 350)
+position = Vector2(448, 64)
 
 [node name="Booster" parent="." unique_id=2052080302 instance=ExtResource("4_qvykx")]
 position = Vector2(336, 496)
