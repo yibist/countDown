@@ -8,11 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://bmo3qh7se0sf1" path="res://assets/background/city/parallaxcitybackgroundmountain.png" id="3_i403b"]
 [ext_resource type="Texture2D" uid="uid://i644s1x6nhc4" path="res://assets/background/city/parallaxcitybuildings.png" id="4_2l0hg"]
 [ext_resource type="PackedScene" uid="uid://drmq771ev0wvo" path="res://scenes/timer.tscn" id="4_eokde"]
-[ext_resource type="PackedScene" uid="uid://dihmip03ex4c4" path="res://scenes/booster.tscn" id="4_qvykx"]
 [ext_resource type="Texture2D" uid="uid://pn4g7miiwl6d" path="res://assets/background/city/parallaxcitywaterreflexion.png" id="5_7gsxw"]
-[ext_resource type="PackedScene" uid="uid://0j703kbqacfi" path="res://scenes/WinArea.tscn" id="5_bujjw"]
 [ext_resource type="PackedScene" uid="uid://kqd0i232o0vn" path="res://scenes/game_over_screen.tscn" id="5_ulyey"]
-[ext_resource type="PackedScene" uid="uid://3p0y0lshbmry" path="res://scenes/stopSign.tscn" id="6_hq32h"]
 [ext_resource type="PackedScene" uid="uid://bafqxi7a6hnnh" path="res://scenes/win_screen.tscn" id="6_j81xe"]
 [ext_resource type="Texture2D" uid="uid://cke8w8l636v3m" path="res://assets/background/rural/ruralparallaxsky.png" id="6_mvorh"]
 [ext_resource type="Texture2D" uid="uid://dixe4n0g8oqo4" path="res://assets/background/rural/ruralparallaxclouds.png" id="7_hulh5"]
@@ -20,6 +17,11 @@
 [ext_resource type="Texture2D" uid="uid://cvkvrgo6pauyi" path="res://assets/background/rural/ruralparallaxvillage.png" id="9_icp1j"]
 [ext_resource type="Texture2D" uid="uid://kop8vdyxpvce" path="res://assets/background/rural/ruralparallaxriver.png" id="10_4gpp4"]
 [ext_resource type="Texture2D" uid="uid://cxym5h2ac604n" path="res://assets/background/rural/ruralparallaxriverfront.png" id="11_rdr40"]
+[ext_resource type="Script" uid="uid://xe481sruk8hv" path="res://scripts/booster.gd" id="15_yw11j"]
+[ext_resource type="Script" uid="uid://cr2wqd1otvvwd" path="res://scripts/winArea.gd" id="16_icp1j"]
+[ext_resource type="Script" uid="uid://b2x4d50rsqpum" path="res://scripts/stopSign.gd" id="17_4gpp4"]
+[ext_resource type="PackedScene" uid="uid://dv4lkt6wtxhtg" path="res://scenes/GrappleDelete.tscn" id="18_rdr40"]
+[ext_resource type="PackedScene" uid="uid://dsuid2ixlda8i" path="res://scenes/loseArea.tscn" id="22_q5jtg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gr3xe"]
 texture = ExtResource("1_eyte8")
@@ -80,6 +82,18 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 4
 sources/0 = SubResource("TileSetAtlasSource_qvykx")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xlbb6"]
+size = Vector2(81, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ujhos"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rd3p3"]
+size = Vector2(34.101563, 65)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kfo6a"]
+size = Vector2(478, 20)
 
 [node name="LevelTemplate" type="Node2D" unique_id=1793895282]
 
@@ -192,6 +206,9 @@ texture = ExtResource("11_rdr40")
 [node name="Background" type="TileMapLayer" parent="." unique_id=65355433]
 tile_set = SubResource("TileSet_01chu")
 
+[node name="LoseArea" parent="." unique_id=1718952081 instance=ExtResource("22_q5jtg")]
+position = Vector2(0, 728)
+
 [node name="Ground" type="TileMapLayer" parent="." unique_id=1807541587]
 tile_set = SubResource("TileSet_01chu")
 
@@ -202,21 +219,41 @@ script = ExtResource("2_7hipx")
 [node name="Player" parent="." unique_id=1029642626 instance=ExtResource("3_gr3xe")]
 position = Vector2(448, 64)
 
-[node name="Booster" parent="." unique_id=2052080302 instance=ExtResource("4_qvykx")]
+[node name="Booster" type="Area2D" parent="." unique_id=2052080302]
 position = Vector2(336, 496)
 scale = Vector2(0.8, 0.8)
+script = ExtResource("15_yw11j")
 direction = 1
 boostAmount = 1000
 
-[node name="WinArea" parent="." unique_id=1922633135 instance=ExtResource("5_bujjw")]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Booster" unique_id=1813404102]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_xlbb6")
+
+[node name="WinArea" type="Area2D" parent="." unique_id=1922633135]
 position = Vector2(856, 446)
+script = ExtResource("16_icp1j")
 
-[node name="StopSign" parent="." unique_id=1477596005 instance=ExtResource("6_hq32h")]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WinArea" unique_id=509356638]
+position = Vector2(0.328125, 0)
+shape = SubResource("RectangleShape2D_ujhos")
+
+[node name="StopSign" type="Area2D" parent="." unique_id=1477596005]
 position = Vector2(144, 480)
+script = ExtResource("17_4gpp4")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1101476983]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StopSign" unique_id=1969918452]
+shape = SubResource("RectangleShape2D_rd3p3")
 
-[node name="timer" parent="CanvasLayer" unique_id=727813435 instance=ExtResource("4_eokde")]
+[node name="GrappleDelete" parent="." unique_id=891749935 instance=ExtResource("18_rdr40")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrappleDelete" unique_id=1773080470]
+position = Vector2(558, 330)
+shape = SubResource("RectangleShape2D_kfo6a")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1101476983]
+
+[node name="timer" parent="UI" unique_id=727813435 instance=ExtResource("4_eokde")]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -224,9 +261,13 @@ offset_left = -40.0
 offset_right = 0.0
 grow_horizontal = 0
 
-[node name="GameOverScreen" parent="CanvasLayer" unique_id=1223479433 node_paths=PackedStringArray("timer") instance=ExtResource("5_ulyey")]
+[node name="GameOverScreen" parent="UI" unique_id=1223479433 node_paths=PackedStringArray("timer") instance=ExtResource("5_ulyey")]
 timer = NodePath("../timer")
 
-[node name="WinScreen" parent="CanvasLayer" unique_id=75464124 node_paths=PackedStringArray("timer") instance=ExtResource("6_j81xe")]
+[node name="WinScreen" parent="UI" unique_id=75464124 node_paths=PackedStringArray("timer") instance=ExtResource("6_j81xe")]
 visible = false
 timer = NodePath("../timer")
+
+[connection signal="body_entered" from="Booster" to="Booster" method="_on_body_entered"]
+[connection signal="body_entered" from="WinArea" to="WinArea" method="_on_body_entered"]
+[connection signal="body_entered" from="StopSign" to="StopSign" method="_on_body_entered"]
