@@ -248,11 +248,10 @@ startTime = 60.0
 timer = NodePath("../timer")
 
 [node name="WinScreen" parent="UI" unique_id=75464124 node_paths=PackedStringArray("timer") instance=ExtResource("10_excbq")]
-visible = false
 timer = NodePath("../timer")
 
 [node name="Player" parent="." unique_id=1029642626 instance=ExtResource("2_6iamk")]
-position = Vector2(320, 1248)
+position = Vector2(6183, 1248)
 floor_constant_speed = false
 
 [node name="Instructions" type="Node2D" parent="." unique_id=786933173]
@@ -329,3 +328,6 @@ position = Vector2(6207.0254, 1007.76953)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WinArea" unique_id=131595081]
 position = Vector2(241.47461, 176.73047)
 shape = SubResource("RectangleShape2D_qo4wk")
+
+[editable path="UI/GameOverScreen"]
+[editable path="UI/WinScreen"]
