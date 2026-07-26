@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://kqd0i232o0vn" path="res://scenes/game_over_screen.tscn" id="8_dga24"]
 [ext_resource type="Texture2D" uid="uid://cvkvrgo6pauyi" path="res://assets/background/rural/ruralparallaxvillage.png" id="9_t4umt"]
 [ext_resource type="Texture2D" uid="uid://kop8vdyxpvce" path="res://assets/background/rural/ruralparallaxriver.png" id="10_4yk0h"]
-[ext_resource type="PackedScene" uid="uid://bafqxi7a6hnnh" path="res://scenes/win_screen.tscn" id="10_excbq"]
 [ext_resource type="PackedScene" uid="uid://drmq771ev0wvo" path="res://scenes/timer.tscn" id="10_qxy0u"]
 [ext_resource type="Texture2D" uid="uid://cxym5h2ac604n" path="res://assets/background/rural/ruralparallaxriverfront.png" id="11_vmrhw"]
 [ext_resource type="Texture2D" uid="uid://bbc2rcwe74j4v" path="res://assets/level_instructions/jump.png" id="23_7o3do"]
@@ -247,11 +246,8 @@ startTime = 60.0
 [node name="GameOverScreen" parent="UI" unique_id=1223479433 node_paths=PackedStringArray("timer") instance=ExtResource("8_dga24")]
 timer = NodePath("../timer")
 
-[node name="WinScreen" parent="UI" unique_id=75464124 node_paths=PackedStringArray("timer") instance=ExtResource("10_excbq")]
-timer = NodePath("../timer")
-
 [node name="Player" parent="." unique_id=1029642626 instance=ExtResource("2_6iamk")]
-position = Vector2(6183, 1248)
+position = Vector2(454, 1249)
 floor_constant_speed = false
 
 [node name="Instructions" type="Node2D" parent="." unique_id=786933173]
@@ -330,4 +326,3 @@ position = Vector2(241.47461, 176.73047)
 shape = SubResource("RectangleShape2D_qo4wk")
 
 [editable path="UI/GameOverScreen"]
-[editable path="UI/WinScreen"]

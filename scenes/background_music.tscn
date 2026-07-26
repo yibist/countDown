@@ -27,6 +27,7 @@ volume_db = -3.61
 
 [node name="bass 1" type="AudioStreamPlayer" parent="." unique_id=430281002]
 stream = ExtResource("4_vjuvc")
+volume_db = -4.996
 
 [node name="synth 1" type="AudioStreamPlayer" parent="." unique_id=1954221602]
 stream = ExtResource("6_ijhdc")

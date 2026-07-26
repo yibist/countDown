@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://dv4lkt6wtxhtg" path="res://scenes/GrappleDelete.tscn" id="19_2gq65"]
 [ext_resource type="PackedScene" uid="uid://drmq771ev0wvo" path="res://scenes/timer.tscn" id="20_fk6jg"]
 [ext_resource type="PackedScene" uid="uid://kqd0i232o0vn" path="res://scenes/game_over_screen.tscn" id="21_v1m6f"]
-[ext_resource type="PackedScene" uid="uid://bafqxi7a6hnnh" path="res://scenes/win_screen.tscn" id="22_vn4iy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gr3xe"]
 texture = ExtResource("12_2qmps")
@@ -198,10 +197,6 @@ offset_right = 0.0
 grow_horizontal = 0
 
 [node name="GameOverScreen" parent="UI" unique_id=1223479433 node_paths=PackedStringArray("timer") instance=ExtResource("21_v1m6f")]
-timer = NodePath("../timer")
-
-[node name="WinScreen" parent="UI" unique_id=75464124 node_paths=PackedStringArray("timer") instance=ExtResource("22_vn4iy")]
-visible = false
 timer = NodePath("../timer")
 
 [connection signal="body_entered" from="Booster" to="Booster" method="_on_body_entered"]

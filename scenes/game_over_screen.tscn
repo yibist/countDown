@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://6k84fbv6amni" path="res://scripts/restart.gd" id="2_61w2s"]
 [ext_resource type="Script" uid="uid://byorxlrieovms" path="res://scripts/level_buttons/return.gd" id="3_jw6e5"]
 
-[node name="GameOverScreen" type="ColorRect" unique_id=1223479433 node_paths=PackedStringArray("timerLabel")]
+[node name="GameOverScreen" type="ColorRect" unique_id=1223479433 node_paths=PackedStringArray("timerLabel", "nameLabel")]
 process_mode = 2
 visible = false
 anchors_preset = 15
@@ -16,6 +16,7 @@ mouse_filter = 1
 color = Color(0, 0, 0, 0.39215687)
 script = ExtResource("1_iwahs")
 timerLabel = NodePath("PanelContainer/VBoxContainer/Label2")
+nameLabel = NodePath("PanelContainer/VBoxContainer/Label")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1725354614]
 layout_mode = 1

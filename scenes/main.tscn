@@ -64,10 +64,6 @@ text = "Start"
 script = ExtResource("4_jyhfs")
 start_scene = &"res://scenes/level_selection.tscn"
 
-[node name="Credits" type="Button" parent="MarginContainer2/VBoxContainer" unique_id=1686570585]
-layout_mode = 2
-text = "Credits"
-
 [node name="Quit" type="Button" parent="MarginContainer2/VBoxContainer" unique_id=117265135]
 layout_mode = 2
 text = "Quit"

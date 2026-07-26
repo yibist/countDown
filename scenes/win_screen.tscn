@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://cx4auevk5a2jp" path="res://scripts/win_screen.gd" id="1_wv5lq"]
 [ext_resource type="Script" uid="uid://dxmy2777p4xrd" path="res://scripts/restart_win.gd" id="2_erk2x"]
-[ext_resource type="Script" uid="uid://bp6cqria8wsj7" path="res://scripts/main_win.gd" id="3_2l6cc"]
 
 [node name="WinScreen" type="ColorRect" unique_id=1223479433 node_paths=PackedStringArray("timerLabel")]
 visible = false
@@ -42,16 +41,11 @@ horizontal_alignment = 1
 layout_mode = 2
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1919947606]
+[node name="Button" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1651305791]
 layout_mode = 2
-text = "Restart"
 script = ExtResource("2_erk2x")
 
-[node name="Button2" type="Button" parent="PanelContainer/VBoxContainer" unique_id=412816909]
+[node name="Button2" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1342220059]
 layout_mode = 2
-text = "Menu"
-script = ExtResource("3_2l6cc")
-main_menu_scene = &"res://scenes/main.tscn"
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Button" to="PanelContainer/VBoxContainer/Button" method="_on_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Button2" to="PanelContainer/VBoxContainer/Button2" method="_on_pressed"]

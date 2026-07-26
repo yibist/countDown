@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://sus1ng7x5vdo" path="res://scenes/spikes.tscn" id="7_qsp8v"]
 [ext_resource type="PackedScene" uid="uid://kqd0i232o0vn" path="res://scenes/game_over_screen.tscn" id="8_ndlae"]
 [ext_resource type="PackedScene" uid="uid://dsuid2ixlda8i" path="res://scenes/loseArea.tscn" id="9_tv7cl"]
-[ext_resource type="PackedScene" uid="uid://bafqxi7a6hnnh" path="res://scenes/win_screen.tscn" id="9_v8d84"]
 [ext_resource type="PackedScene" uid="uid://dv4lkt6wtxhtg" path="res://scenes/GrappleDelete.tscn" id="12_brxtv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gr3xe"]
@@ -237,10 +236,6 @@ grow_horizontal = 0
 startTime = 20.0
 
 [node name="GameOverScreen" parent="CanvasLayer" unique_id=1223479433 node_paths=PackedStringArray("timer") instance=ExtResource("8_ndlae")]
-timer = NodePath("../timer")
-
-[node name="WinScreen" parent="CanvasLayer" unique_id=75464124 node_paths=PackedStringArray("timer") instance=ExtResource("9_v8d84")]
-visible = false
 timer = NodePath("../timer")
 
 [node name="LoseArea" parent="." unique_id=1718952081 instance=ExtResource("9_tv7cl")]

@@ -13,10 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://drmq771ev0wvo" path="res://scenes/timer.tscn" id="7_ioaxa"]
 [ext_resource type="PackedScene" uid="uid://kqd0i232o0vn" path="res://scenes/game_over_screen.tscn" id="8_saqpg"]
 [ext_resource type="PackedScene" uid="uid://sus1ng7x5vdo" path="res://scenes/spikes.tscn" id="9_t0ocr"]
-[ext_resource type="PackedScene" uid="uid://bafqxi7a6hnnh" path="res://scenes/win_screen.tscn" id="9_w0qo1"]
 [ext_resource type="PackedScene" uid="uid://dsuid2ixlda8i" path="res://scenes/loseArea.tscn" id="10_ghkmt"]
 [ext_resource type="PackedScene" uid="uid://dv4lkt6wtxhtg" path="res://scenes/GrappleDelete.tscn" id="11_g1cvr"]
-[ext_resource type="Script" uid="uid://be45wcw7xkcbx" path="res://scenes/levels/looparea.gd" id="13_pamit"]
+[ext_resource type="Script" uid="uid://be45wcw7xkcbx" path="res://scripts/looparea.gd" id="13_pamit"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gr3xe"]
 texture = ExtResource("1_78fkg")
@@ -184,10 +183,6 @@ grow_horizontal = 0
 startTime = 30.0
 
 [node name="GameOverScreen" parent="CanvasLayer" unique_id=1223479433 node_paths=PackedStringArray("timer") instance=ExtResource("8_saqpg")]
-timer = NodePath("../timer")
-
-[node name="WinScreen" parent="CanvasLayer" unique_id=75464124 node_paths=PackedStringArray("timer") instance=ExtResource("9_w0qo1")]
-visible = false
 timer = NodePath("../timer")
 
 [node name="Booster" parent="." unique_id=2052080302 instance=ExtResource("4_pamit")]
