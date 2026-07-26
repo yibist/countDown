@@ -1,12 +1,12 @@
-extends AudioStreamPlayer2D
+extends AudioStreamPlayer
 
-var audioPlayers: Array[AudioStreamPlayer2D] = []
+var audioPlayers: Array[AudioStreamPlayer] = []
 
 
-@export var drum2: AudioStreamPlayer2D
-@export var drum3: AudioStreamPlayer2D
-@export var bass1: AudioStreamPlayer2D
-@export var synth1: AudioStreamPlayer2D
+@export var drum2: AudioStreamPlayer
+@export var drum3: AudioStreamPlayer
+@export var bass1: AudioStreamPlayer
+@export var synth1: AudioStreamPlayer
 
 var timer: Timer
 var loopCount: int = 0

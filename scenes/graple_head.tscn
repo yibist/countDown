@@ -27,6 +27,6 @@ points = PackedVector2Array(46, -7)
 width = 1.0
 default_color = Color(1, 0, 0, 1)
 
-[node name="LandingSound" type="AudioStreamPlayer2D" parent="." unique_id=584608024]
+[node name="LandingSound" type="AudioStreamPlayer" parent="." unique_id=2077965637]
 stream = ExtResource("5_wwm3d")
 volume_db = -20.0

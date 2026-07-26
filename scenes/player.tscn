@@ -125,6 +125,6 @@ hue_variation_max = 0.17
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2133775887]
 
-[node name="LandingSound" type="AudioStreamPlayer2D" parent="." unique_id=663418465]
+[node name="LandingSound" type="AudioStreamPlayer" parent="." unique_id=1408953636]
 stream = ExtResource("6_tuyoq")
 volume_db = -20.0
