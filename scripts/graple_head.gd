@@ -51,7 +51,7 @@ func despawn() -> void:
 			joint.queue_free()
 	ropeJoints.clear()
 	hide()
-	
+
 func _process(delta: float) -> void:
 	if !spawned:
 		return
@@ -66,7 +66,7 @@ func _process(delta: float) -> void:
 		
 	line.clear_points()
 	var currentDistance = player.global_position.distance_to(global_position)
-
+	
 	if currentDistance > ropeLength * .99:
 		line.add_point(player.global_position)
 		line.add_point(global_position)
@@ -83,12 +83,14 @@ func _process(delta: float) -> void:
 		ropeLength -= delta * 200
 		if ropeLength < 50:
 			ropeLength = 50
-
-
-		
+	
 	if not hit:
 		var collision = move_and_collide(move_direction * speed * delta)
 		if collision:
+			var colBody = collision.get_collider() as CharacterBody2D 
+			if colBody.is_in_group("grappleDespawnZone"):
+				despawn()
+				return
 			hit = true
 			ropeLength = global_position.distance_to(player.global_position)
 			global_position += move_direction * 10
