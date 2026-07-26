@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var speed: float = 2000.0  
 @export var ropeSegment: PackedScene
 @export var ropeEnd: PackedScene
-@export var landingSound: AudioStreamPlayer2D
+@export var landingSound: AudioStreamPlayer
 
 
 var move_direction: Vector2

@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var grapleHead: CharacterBody2D
 @export var landParticles: CPUParticles2D
 @export var sprite: Sprite2D
-@export var landingSound: AudioStreamPlayer2D
+@export var landingSound: AudioStreamPlayer
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
