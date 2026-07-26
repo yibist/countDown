@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bvwcxu1tfpaed" path="res://assets/level_selection_button_icon.png" id="2_gswpo"]
 [ext_resource type="Script" uid="uid://cgx186vfth6x7" path="res://scripts/level_buttons/button.gd" id="3_3rh63"]
 [ext_resource type="Script" uid="uid://bxi2e7s1vp3du" path="res://scripts/level_buttons/button_test.gd" id="4_tuscg"]
+[ext_resource type="Texture2D" uid="uid://biy6nckjbx0l4" path="res://assets/return_button.png" id="5_42rqe"]
+[ext_resource type="Script" uid="uid://byorxlrieovms" path="res://scripts/level_buttons/return.gd" id="6_rcujv"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gswpo"]
 
@@ -171,6 +173,20 @@ icon_alignment = 1
 script = ExtResource("4_tuscg")
 level = &"res://scenes/levels/level_test.tscn"
 
+[node name="Return" type="Button" parent="." unique_id=173654154]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 22.0
+offset_right = 89.0
+offset_bottom = 86.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gswpo")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3rh63")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tuscg")
+icon = ExtResource("5_42rqe")
+icon_alignment = 1
+script = ExtResource("6_rcujv")
+main_menu_scene = &"res://scenes/main.tscn"
+
 [connection signal="pressed" from="MarginContainer2/GridContainer/Button" to="MarginContainer2/GridContainer/Button" method="_on_pressed"]
 [connection signal="pressed" from="MarginContainer2/GridContainer/Button2" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MarginContainer2/GridContainer/Button3" to="." method="_on_button_pressed"]
@@ -183,3 +199,4 @@ level = &"res://scenes/levels/level_test.tscn"
 [connection signal="pressed" from="MarginContainer2/GridContainer/Button10" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button11" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button11" to="Button11" method="_on_pressed"]
+[connection signal="pressed" from="Return" to="Return" method="_on_pressed"]
