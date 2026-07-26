@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://p1j48bv473xc" path="res://assets/audio/freesound_community-sword-clash-1-6917.mp3" id="5_wwm3d"]
 
 [node name="GrapleHead" type="CharacterBody2D" unique_id=285944462 node_paths=PackedStringArray("line", "landingSound")]
-collision_layer = 2
+collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_1dgco")
 line = NodePath("Line2D")

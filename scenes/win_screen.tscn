@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bafqxi7a6hnnh"]
 
-[ext_resource type="Script" uid="uid://cx4auevk5a2jp" path="res://scenes/win_screen.gd" id="1_wv5lq"]
+[ext_resource type="Script" uid="uid://cx4auevk5a2jp" path="res://scripts/win_screen.gd" id="1_wv5lq"]
 
 [node name="WinScreen" type="ColorRect" unique_id=1223479433 node_paths=PackedStringArray("timerLabel")]
 anchors_preset = 15
