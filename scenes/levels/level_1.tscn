@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dsuid2ixlda8i" path="res://scenes/loseArea.tscn" id="7_oc4kc"]
 [ext_resource type="PackedScene" uid="uid://kqd0i232o0vn" path="res://scenes/game_over_screen.tscn" id="8_dga24"]
 [ext_resource type="PackedScene" uid="uid://sus1ng7x5vdo" path="res://scenes/spikes.tscn" id="8_excbq"]
+[ext_resource type="PackedScene" uid="uid://cbbijws3fo0nd" path="res://scenes/grappleDespawnZone.tscn" id="9_iav0o"]
 [ext_resource type="PackedScene" uid="uid://bafqxi7a6hnnh" path="res://scenes/win_screen.tscn" id="10_excbq"]
 [ext_resource type="PackedScene" uid="uid://drmq771ev0wvo" path="res://scenes/timer.tscn" id="10_qxy0u"]
 
@@ -44,6 +45,38 @@ physics_layer_0/collision_layer = 2
 physics_layer_1/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_6761a")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iav0o"]
+texture = ExtResource("1_nsrm0")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+3:1/0 = 0
+3:2/0 = 0
+3:3/0 = 0
+2:3/0 = 0
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, -0.47794342, 0.95589066, -16, 16)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, 16, 16, 16)
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 16, 16, 16, 8.45336, 0.17985821, -8.453361, 0.17985821)
+2:2/0 = 0
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_dnkej"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 4
+physics_layer_1/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_iav0o")
+
 [node name="Level1" type="Node2D" unique_id=113812367]
 
 [node name="Background" type="TileMapLayer" parent="." unique_id=1620215366]
@@ -56,11 +89,12 @@ tile_set = SubResource("TileSet_sk5k4")
 
 [node name="Barrier" type="TileMapLayer" parent="." unique_id=1367944015]
 tile_map_data = PackedByteArray("AAABAAAAAAABAAIAAAACAAAAAAABAAIAAAADAAAAAAABAAIAAAAEAAAAAAABAAIAAAAFAAAAAAABAAIAAAAGAAAAAAABAAIAAAAVAAAAAAABAAIAAAAWAAAAAAABAAIAAAAXAAAAAAABAAIAAAAYAAAAAAABAAIAAAAZAAAAAAABAAIAAAAaAAAAAAABAAIAAAAbAAAAAAABAAIAAAAcAAAAAAABAAIAAAAdAAAAAAABAAIAAAAeAAAAAAABAAIAAAAfAAAAAAABAAIAAAAgAAAAAAABAAIAAAAhAAAAAAABAAIAAAAiAAAAAAABAAIAAAA=")
-tile_set = SubResource("TileSet_sk5k4")
+tile_set = SubResource("TileSet_dnkej")
 script = ExtResource("2_x42e6")
 
 [node name="Player" parent="." unique_id=1029642626 instance=ExtResource("2_6iamk")]
 position = Vector2(586, 350)
+collision_mask = 6
 
 [node name="Booster" parent="." unique_id=2052080302 instance=ExtResource("4_6761a")]
 position = Vector2(288, 496)
@@ -100,6 +134,11 @@ scale = Vector2(11.45, 1)
 [node name="Spikes4" parent="." unique_id=134479923 instance=ExtResource("8_excbq")]
 position = Vector2(114.00001, 197)
 scale = Vector2(11.45, 1)
+
+[node name="GrappleDespawnZone" parent="." unique_id=117742686 instance=ExtResource("9_iav0o")]
+position = Vector2(561.99994, 38)
+scale = Vector2(60, 1)
+collision_layer = 0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=672088210]
 

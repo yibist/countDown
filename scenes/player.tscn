@@ -71,6 +71,7 @@ point_count = 4
 
 [node name="Player" type="CharacterBody2D" unique_id=1029642626 node_paths=PackedStringArray("grapleHead", "landParticles", "sprite", "landingSound")]
 collision_mask = 2
+floor_constant_speed = true
 script = ExtResource("1_onrkg")
 grapleHead = NodePath("GrapleComponent/GrapleHead")
 landParticles = NodePath("CPUParticles2D")
