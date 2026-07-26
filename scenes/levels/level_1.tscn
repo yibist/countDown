@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dihmip03ex4c4" path="res://scenes/booster.tscn" id="4_6761a"]
 [ext_resource type="PackedScene" uid="uid://0j703kbqacfi" path="res://scenes/WinArea.tscn" id="5_sk5k4"]
 [ext_resource type="PackedScene" uid="uid://3p0y0lshbmry" path="res://scenes/stopSign.tscn" id="6_sk5k4"]
+[ext_resource type="PackedScene" uid="uid://dsuid2ixlda8i" path="res://scenes/loseArea.tscn" id="7_oc4kc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6761a"]
 texture = ExtResource("1_nsrm0")
@@ -70,3 +71,6 @@ position = Vector2(1046, 384)
 
 [node name="StopSign" parent="." unique_id=1477596005 instance=ExtResource("6_sk5k4")]
 position = Vector2(144, 480)
+
+[node name="LoseArea" parent="." unique_id=1718952081 instance=ExtResource("7_oc4kc")]
+levelLength = 1000.0
