@@ -309,6 +309,7 @@ shape = SubResource("RectangleShape2D_5jg4h")
 
 [node name="Booster" parent="." unique_id=2052080302 instance=ExtResource("31_vmrhw")]
 position = Vector2(5264.9756, 1043.0826)
+boostAmount = 1000
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Booster" unique_id=181766547]
 position = Vector2(-88.975586, 220.91736)
