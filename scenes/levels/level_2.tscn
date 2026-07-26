@@ -1,9 +1,14 @@
 [gd_scene format=4 uid="uid://ok8y8yd2ppr"]
 
 [ext_resource type="Texture2D" uid="uid://bm2jr3nhvtvl2" path="res://assets/terrain_atlas.png" id="1_3p04p"]
+[ext_resource type="Texture2D" uid="uid://dra6ex4atlo3h" path="res://assets/background/city/parallaxcitywater.png" id="1_v8d84"]
+[ext_resource type="Texture2D" uid="uid://dindgr56nro8u" path="res://assets/background/city/parallaxcitysky.png" id="2_gw1l3"]
 [ext_resource type="Script" uid="uid://bkunx6tigaxgx" path="res://scripts/barrier.gd" id="2_qsp8v"]
 [ext_resource type="PackedScene" uid="uid://ckrag6qa4otci" path="res://scenes/player.tscn" id="3_nt80m"]
+[ext_resource type="Texture2D" uid="uid://bmo3qh7se0sf1" path="res://assets/background/city/parallaxcitybackgroundmountain.png" id="3_p4se4"]
 [ext_resource type="PackedScene" uid="uid://dihmip03ex4c4" path="res://scenes/booster.tscn" id="4_brxtv"]
+[ext_resource type="Texture2D" uid="uid://i644s1x6nhc4" path="res://assets/background/city/parallaxcitybuildings.png" id="4_sibr7"]
+[ext_resource type="Texture2D" uid="uid://pn4g7miiwl6d" path="res://assets/background/city/parallaxcitywaterreflexion.png" id="5_lkn2k"]
 [ext_resource type="PackedScene" uid="uid://0j703kbqacfi" path="res://scenes/WinArea.tscn" id="5_tv7cl"]
 [ext_resource type="PackedScene" uid="uid://3p0y0lshbmry" path="res://scenes/stopSign.tscn" id="6_r88tb"]
 [ext_resource type="PackedScene" uid="uid://drmq771ev0wvo" path="res://scenes/timer.tscn" id="7_1yj8c"]
@@ -80,6 +85,55 @@ size = Vector2(3.6486511, 274.5)
 size = Vector2(3360.5, 204.5)
 
 [node name="LevelTemplate" type="Node2D" unique_id=1793895282]
+
+[node name="BackgroundCity" type="Node2D" parent="." unique_id=1377078887]
+position = Vector2(0, -372)
+
+[node name="Water" type="Parallax2D" parent="BackgroundCity" unique_id=1558537211]
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(3800, 1200)
+repeat_times = 20
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundCity/Water" unique_id=208042900]
+position = Vector2(1856, 624)
+texture = ExtResource("1_v8d84")
+
+[node name="Sky" type="Parallax2D" parent="BackgroundCity" unique_id=2059809057]
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(3800, 0)
+autoscroll = Vector2(30, 0)
+repeat_times = 20
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundCity/Sky" unique_id=1773388861]
+position = Vector2(1856, 624)
+texture = ExtResource("2_gw1l3")
+
+[node name="Mountain" type="Parallax2D" parent="BackgroundCity" unique_id=1470661683]
+scroll_scale = Vector2(0.2, 0.2)
+repeat_size = Vector2(3800, 0)
+repeat_times = 20
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundCity/Mountain" unique_id=1311395628]
+position = Vector2(1856, 624)
+texture = ExtResource("3_p4se4")
+
+[node name="City" type="Parallax2D" parent="BackgroundCity" unique_id=879471493]
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(3800, 0)
+repeat_times = 20
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundCity/City" unique_id=512281419]
+position = Vector2(1856, 624)
+texture = ExtResource("4_sibr7")
+
+[node name="CityReflection" type="Parallax2D" parent="BackgroundCity" unique_id=1791573596]
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(3800, 0)
+repeat_times = 20
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundCity/CityReflection" unique_id=1133135940]
+position = Vector2(1856, 624)
+texture = ExtResource("5_lkn2k")
 
 [node name="Background" type="TileMapLayer" parent="." unique_id=65355433]
 tile_map_data = PackedByteArray("AAAbAAYAAAADAAAAAAAbAAcAAAADAAAAAAAbAAgAAAABAAAAAAAbAAkAAAADAAAAAAAbAAoAAAADAAAAAAAbAAsAAAABAAAAAAAbAAwAAAADAAAAAAAbAA0AAAADAAAAAAAbAA4AAAABAAAAAAAbAA8AAAADAAAAAAAbABEAAAABAAAAAAAbABIAAAADAAAAAAAbABMAAAADAAAAAAAbABQAAAABAAAAAAAbABUAAAADAAAAAAAbABYAAAADAAAAAAAbABcAAAABAAAAAAAbABgAAAADAAAAAAAbABkAAAADAAAAAAAbABoAAAADAAAAAAAcAAYAAAADAAAAAAAcAAcAAAADAAAAAAAcAAgAAAADAAAAAAAcAAkAAAADAAAAAAAcAAoAAAADAAAAAAAcAAsAAAADAAAAAAAcAAwAAAADAAAAAAAcAA0AAAADAAAAAAAcAA4AAAADAAAAAAAcAA8AAAADAAAAAAAcABAAAAADAAAAAAAcABEAAAADAAAAAAAcABIAAAADAAAAAAAcABMAAAADAAAAAAAcABQAAAADAAAAAAAcABUAAAADAAAAAAAcABYAAAADAAAAAAAcABcAAAADAAAAAAAcABgAAAADAAAAAAAcABkAAAADAAAAAAAcABoAAAADAAAAAAAdAAYAAAADAAAAAAAdAAcAAAADAAAAAAAdAAgAAAADAAAAAAAdAAkAAAADAAAAAAAdAAoAAAADAAAAAAAdAAsAAAADAAAAAAAdAAwAAAADAAAAAAAdAA0AAAADAAAAAAAdAA4AAAADAAAAAAAdAA8AAAADAAAAAAAdABAAAAADAAAAAAAdABEAAAADAAAAAAAdABIAAAADAAAAAAAdABMAAAADAAAAAAAdABQAAAADAAAAAAAdABUAAAADAAAAAAAdABYAAAADAAAAAAAdABcAAAADAAAAAAAdABgAAAADAAAAAAAdABkAAAADAAAAAAAdABoAAAADAAAAAAAeAAYAAAADAAAAAAAeAAcAAAADAAAAAAAeAAgAAAABAAAAAAAeAAkAAAADAAAAAAAeAAoAAAADAAAAAAAeAAsAAAABAAAAAAAeAAwAAAADAAAAAAAeAA0AAAADAAAAAAAeAA4AAAABAAAAAAAeAA8AAAADAAAAAAAeABAAAAADAAAAAAAeABEAAAABAAAAAAAeABIAAAADAAAAAAAeABMAAAADAAAAAAAeABQAAAABAAAAAAAeABUAAAADAAAAAAAeABYAAAADAAAAAAAeABcAAAABAAAAAAAeABgAAAADAAAAAAAeABkAAAADAAAAAAAeABoAAAADAAAAAAAfAAYAAAADAAAAAAAfAAcAAAADAAAAAAAfAAgAAAADAAAAAAAfAAkAAAADAAAAAAAfAAoAAAADAAAAAAAfAAsAAAADAAAAAAAfAAwAAAADAAAAAAAfAA0AAAADAAAAAAAfAA4AAAADAAAAAAAfAA8AAAADAAAAAAAfABAAAAADAAAAAAAfABEAAAADAAAAAAAfABIAAAADAAAAAAAfABMAAAADAAAAAAAfABQAAAADAAAAAAAfABUAAAADAAAAAAAfABYAAAADAAAAAAAfABcAAAADAAAAAAAfABgAAAADAAAAAAAfABkAAAADAAAAAAAfABoAAAADAAAAAAAgAAYAAAADAAAAAAAgAAcAAAADAAAAAAAgAAgAAAADAAAAAAAgAAkAAAADAAAAAAAgAAoAAAADAAAAAAAgAAsAAAADAAAAAAAgAAwAAAADAAAAAAAgAA0AAAADAAAAAAAgAA4AAAADAAAAAAAgAA8AAAADAAAAAAAgABAAAAADAAAAAAAgABEAAAADAAAAAAAgABIAAAADAAAAAAAgABMAAAADAAAAAAAgABQAAAADAAAAAAAgABUAAAADAAAAAAAgABYAAAADAAAAAAAgABcAAAADAAAAAAAgABgAAAADAAAAAAAgABkAAAADAAAAAAAgABoAAAADAAAAAAAhAAYAAAADAAAAAAAhAAcAAAADAAAAAAAhAAgAAAABAAAAAAAhAAkAAAADAAAAAAAhAAoAAAADAAAAAAAhAAsAAAABAAAAAAAhAAwAAAADAAAAAAAhAA0AAAADAAAAAAAhAA4AAAABAAAAAAAhAA8AAAADAAAAAAAhABAAAAADAAAAAAAhABEAAAABAAAAAAAhABIAAAADAAAAAAAhABMAAAADAAAAAAAhABQAAAABAAAAAAAhABUAAAADAAAAAAAhABYAAAADAAAAAAAhABcAAAABAAAAAAAhABgAAAADAAAAAAAhABkAAAADAAAAAAAhABoAAAADAAAAAAAiAAYAAAADAAAAAAAiAAcAAAADAAAAAAAiAAgAAAADAAAAAAAiAAkAAAADAAAAAAAiAAoAAAADAAAAAAAiAAsAAAADAAAAAAAiAAwAAAADAAAAAAAiAA0AAAADAAAAAAAiAA4AAAADAAAAAAAiAA8AAAADAAAAAAAiABAAAAADAAAAAAAiABEAAAADAAAAAAAiABIAAAADAAAAAAAiABMAAAADAAAAAAAiABQAAAADAAAAAAAiABUAAAADAAAAAAAiABYAAAADAAAAAAAiABcAAAADAAAAAAAiABgAAAADAAAAAAAiABkAAAADAAAAAAAiABoAAAADAAAAAAAbABAAAAADAAAAAAAuAAUAAAABAAAAAAAuAAYAAAADAAAAAAAuAAcAAAADAAAAAAAuAAgAAAABAAAAAAAuAAkAAAADAAAAAAAuAAoAAAADAAAAAAAuAAsAAAABAAAAAAAuAAwAAAADAAAAAAAuAA0AAAADAAAAAAAuAA4AAAABAAAAAAAuAA8AAAADAAAAAAAuABAAAAADAAAAAAAuABEAAAABAAAAAAAuABIAAAADAAAAAAAvAAUAAAADAAAAAAAvAAYAAAADAAAAAAAvAAcAAAADAAAAAAAvAAgAAAADAAAAAAAvAAkAAAADAAAAAAAvAAoAAAADAAAAAAAvAAsAAAADAAAAAAAvAAwAAAADAAAAAAAvAA0AAAADAAAAAAAvAA4AAAADAAAAAAAvAA8AAAADAAAAAAAvABAAAAADAAAAAAAvABEAAAADAAAAAAAvABIAAAADAAAAAAAtABAAAAADAAAAAAAtABEAAAADAAAAAAAtABIAAAADAAAAAAA=")
@@ -180,6 +234,7 @@ anchor_right = 1.0
 offset_left = -40.0
 offset_right = 0.0
 grow_horizontal = 0
+startTime = 20.0
 
 [node name="GameOverScreen" parent="CanvasLayer" unique_id=1223479433 node_paths=PackedStringArray("timer") instance=ExtResource("8_ndlae")]
 timer = NodePath("../timer")
@@ -189,7 +244,7 @@ visible = false
 timer = NodePath("../timer")
 
 [node name="LoseArea" parent="." unique_id=1718952081 instance=ExtResource("9_tv7cl")]
-levelLength = 1000.0
+levelLength = 3500.0
 
 [node name="GrappleDelete" parent="." unique_id=891749935 instance=ExtResource("12_brxtv")]
 
