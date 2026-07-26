@@ -85,10 +85,10 @@ func _process(delta: float) -> void:
 			ropeLength = 50
 	
 	if not hit:
-		var collision = move_and_collide(move_direction * speed * delta)
+		var collision = move_and_collide(move_direction * speed * delta, false, 0.08)
 		if collision:
-			var colBody = collision.get_collider() as CharacterBody2D 
-			if colBody.is_in_group("grappleDespawnZone"):
+			var body = collision.get_collider()
+			if (body.is_in_group("grappleDespawnZone")):
 				despawn()
 				return
 			hit = true

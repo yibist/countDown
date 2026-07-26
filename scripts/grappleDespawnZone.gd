@@ -1,6 +1,4 @@
-extends Area2D
-
-@export var BodyName:String = "GrapleHead"
+extends RigidBody2D
 
 func _ready() -> void:
 	add_to_group("grappleDespawnZone", true)
