@@ -1,14 +1,18 @@
 [gd_scene format=3 uid="uid://kqd0i232o0vn"]
 
 [ext_resource type="Script" uid="uid://dahxchf5y4315" path="res://scripts/game_over_screen.gd" id="1_iwahs"]
+[ext_resource type="Script" uid="uid://6k84fbv6amni" path="res://scripts/restart.gd" id="2_61w2s"]
+[ext_resource type="Script" uid="uid://byorxlrieovms" path="res://scripts/level_buttons/return.gd" id="3_jw6e5"]
 
 [node name="GameOverScreen" type="ColorRect" unique_id=1223479433 node_paths=PackedStringArray("timerLabel")]
+process_mode = 2
 visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 color = Color(0, 0, 0, 0.39215687)
 script = ExtResource("1_iwahs")
 timerLabel = NodePath("PanelContainer/VBoxContainer/Label2")
@@ -42,7 +46,13 @@ horizontal_alignment = 1
 [node name="Button" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1919947606]
 layout_mode = 2
 text = "Restart"
+script = ExtResource("2_61w2s")
 
 [node name="Button2" type="Button" parent="PanelContainer/VBoxContainer" unique_id=412816909]
 layout_mode = 2
 text = "Menu"
+script = ExtResource("3_jw6e5")
+main_menu_scene = &"res://scenes/main.tscn"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Button" to="PanelContainer/VBoxContainer/Button" method="_on_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Button2" to="PanelContainer/VBoxContainer/Button2" method="_on_pressed"]

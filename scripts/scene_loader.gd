@@ -36,7 +36,6 @@ func _process(_delta: float) -> void:
 	
 	match load_status:
 		ResourceLoader.THREAD_LOAD_INVALID_RESOURCE, ResourceLoader.THREAD_LOAD_FAILED:
-			printerr("invalid target scene!")
 			set_process(false)
 		ResourceLoader.THREAD_LOAD_LOADED:
 			target_scene = ResourceLoader.load_threaded_get(scene_path)
