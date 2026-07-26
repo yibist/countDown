@@ -11,8 +11,10 @@ const ACCELERATION = 20.0
 const FRICTION = 8.0
 const SWINGFORCE = 300
 var jumps = 2;
+var dashes = 1;
 const WHEELRADIUS = 30
-
+var dashCooldown: float = 1.0
+var dashTimer: float = 0.0
 
 
 func _physics_process(delta: float) -> void:
@@ -20,17 +22,26 @@ func _physics_process(delta: float) -> void:
 	var maxLength = grapleHead.ropeLength
 	var toPlayer = global_position - hookPoint
 	var distance = toPlayer.length()
-	
+	dashTimer -= delta
 	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	else:
 		jumps = 2
+		dashes = 1
 
 	if Input.is_action_just_pressed("jump") && jumps > 0:
 		velocity.y = JUMP_VELOCITY
 		jumps -= 1
-		
+	
+	if Input.is_action_just_pressed("dash") and dashes > 0 and dashTimer <= 0:
+		var currentSpeed = velocity.length()
+		var mousePos = get_global_mouse_position()
+		var mouseDir = (mousePos - global_position).normalized()
+		velocity = mouseDir * (max(currentSpeed,SPEED) + 100)
+		dashTimer = dashCooldown
+		dashes -= 1
+	
 	var isSwinging = grapleHead.hit and distance >= maxLength
 	var direction := Input.get_axis("moveLeft", "moveRight")
 
@@ -58,15 +69,7 @@ func _physics_process(delta: float) -> void:
 				
 		elif is_on_floor():
 			velocity.x = move_toward(velocity.x, 0, FRICTION)
-	
-	if Input.is_action_just_pressed("dash"):
-		var currentSpeed = velocity.length()
-		var mousePos = get_global_mouse_position()
-		var mouseDir = (mousePos - global_position).normalized()
-		velocity = mouseDir * (max(currentSpeed,SPEED) + 100)
-		
-		
-	
+
 	var tempVelocity = velocity
 	move_and_slide()
 	emit_land_particles(tempVelocity)

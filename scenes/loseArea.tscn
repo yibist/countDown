@@ -3,14 +3,52 @@
 [ext_resource type="Script" uid="uid://b8j2xgfeqrktk" path="res://scripts/loseArea.gd" id="1_uwg21"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xlbb6"]
-size = Vector2(20, 648)
+size = Vector2(2, 1602)
 
-[node name="LoseArea" type="Area2D" unique_id=1718952081]
+[sub_resource type="Curve" id="Curve_5jg4h"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 160), 0.0, 0.0, 0, 0, Vector2(0.5, 0), 358.2244, 0.0, 0, 0]
+point_count = 2
+metadata/_snap_enabled = true
+
+[sub_resource type="Curve" id="Curve_it6un"]
+_data = [Vector2(0, 0.9230769), 0.0, 0.0, 0, 0, Vector2(1, 0.19526625), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="LoseArea" type="Area2D" unique_id=1718952081 node_paths=PackedStringArray("particles", "colorRect")]
 script = ExtResource("1_uwg21")
+particles = NodePath("CPUParticles2D")
+waitPeriod = 5000.0
+colorRect = NodePath("ColorRect")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2137056803]
-position = Vector2(13, 324)
+position = Vector2(0, 325)
 shape = SubResource("RectangleShape2D_xlbb6")
 debug_color = Color(0.8117647, 0, 0.14901961, 0.6862745)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=932847138]
+position = Vector2(0, 325)
+emitting = false
+amount = 20000
+lifetime = 0.5
+speed_scale = 0.7
+local_coords = true
+emission_shape = 3
+emission_rect_extents = Vector2(0, 800)
+spread = 0.0
+gravity = Vector2(0, 300)
+initial_velocity_min = 3.0
+initial_velocity_max = 4.0
+linear_accel_min = 10.0
+linear_accel_max = 20.0
+linear_accel_curve = SubResource("Curve_5jg4h")
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_it6un")
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=96313074]
+offset_top = -476.0
+offset_bottom = 1126.0
+color = Color(0, 0, 0, 1)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
