@@ -13,15 +13,11 @@
 [ext_resource type="Texture2D" uid="uid://dixe4n0g8oqo4" path="res://assets/background/rural/ruralparallaxclouds.png" id="7_x7jkp"]
 [ext_resource type="Texture2D" uid="uid://b8fe3nkefe32g" path="res://assets/background/rural/ruralparallaxmountain.png" id="8_0qwwm"]
 [ext_resource type="PackedScene" uid="uid://kqd0i232o0vn" path="res://scenes/game_over_screen.tscn" id="8_dga24"]
-[ext_resource type="PackedScene" uid="uid://dv4lkt6wtxhtg" path="res://scenes/GrappleDelete.tscn" id="9_iav0o"]
 [ext_resource type="Texture2D" uid="uid://cvkvrgo6pauyi" path="res://assets/background/rural/ruralparallaxvillage.png" id="9_t4umt"]
 [ext_resource type="Texture2D" uid="uid://kop8vdyxpvce" path="res://assets/background/rural/ruralparallaxriver.png" id="10_4yk0h"]
 [ext_resource type="PackedScene" uid="uid://bafqxi7a6hnnh" path="res://scenes/win_screen.tscn" id="10_excbq"]
 [ext_resource type="PackedScene" uid="uid://drmq771ev0wvo" path="res://scenes/timer.tscn" id="10_qxy0u"]
 [ext_resource type="Texture2D" uid="uid://cxym5h2ac604n" path="res://assets/background/rural/ruralparallaxriverfront.png" id="11_vmrhw"]
-[ext_resource type="Script" uid="uid://xe481sruk8hv" path="res://scripts/booster.gd" id="16_cfnpk"]
-[ext_resource type="Script" uid="uid://cr2wqd1otvvwd" path="res://scripts/winArea.gd" id="17_wvtie"]
-[ext_resource type="Script" uid="uid://b2x4d50rsqpum" path="res://scripts/stopSign.gd" id="18_o8s4s"]
 [ext_resource type="Texture2D" uid="uid://bbc2rcwe74j4v" path="res://assets/level_instructions/jump.png" id="23_7o3do"]
 [ext_resource type="Texture2D" uid="uid://cuovys7ubg2qt" path="res://assets/level_instructions/movementpng.png" id="24_7o3do"]
 [ext_resource type="Texture2D" uid="uid://lfq3vmwnpeii" path="res://assets/level_instructions/death_zone.png" id="24_mqh5v"]
@@ -31,8 +27,12 @@
 [ext_resource type="Texture2D" uid="uid://cqmmyadpx3a48" path="res://assets/level_instructions/hook_again.png" id="29_4yk0h"]
 [ext_resource type="Texture2D" uid="uid://c73g85pulpdp1" path="res://assets/level_instructions/spikes.png" id="30_vmrhw"]
 [ext_resource type="Texture2D" uid="uid://bdteodlweqx6m" path="res://assets/level_instructions/speed.png" id="31_4yk0h"]
+[ext_resource type="PackedScene" uid="uid://dihmip03ex4c4" path="res://scenes/booster.tscn" id="31_vmrhw"]
+[ext_resource type="PackedScene" uid="uid://3p0y0lshbmry" path="res://scenes/stopSign.tscn" id="32_cfnpk"]
 [ext_resource type="Texture2D" uid="uid://cpqkrtx5sgrf0" path="res://assets/level_instructions/slow.png" id="32_vmrhw"]
 [ext_resource type="Texture2D" uid="uid://brpt44huj7gnx" path="res://assets/level_instructions/finish.png" id="33_cfnpk"]
+[ext_resource type="PackedScene" uid="uid://0j703kbqacfi" path="res://scenes/WinArea.tscn" id="33_wvtie"]
+[ext_resource type="PackedScene" uid="uid://sus1ng7x5vdo" path="res://scenes/spikes.tscn" id="34_wvtie"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gr3xe"]
 texture = ExtResource("1_nsrm0")
@@ -94,17 +94,17 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 4
 sources/0 = SubResource("TileSetAtlasSource_qvykx")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xlbb6"]
-size = Vector2(81, 48)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5jg4h"]
+size = Vector2(774.5947, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ujhos"]
-size = Vector2(32, 32)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_it6un"]
+size = Vector2(48, 32)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rd3p3"]
-size = Vector2(34.101563, 65)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d8717"]
+size = Vector2(32, 64)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kfo6a"]
-size = Vector2(478, 20)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qo4wk"]
+size = Vector2(31, 63)
 
 [node name="LevelTemplate" type="Node2D" unique_id=1793895282]
 
@@ -233,39 +233,6 @@ tile_map_data = PackedByteArray("AAAAAPr/AAABAAIAAAAAAPv/AAABAAIAAAAAAPz/AAABAAI
 tile_set = SubResource("TileSet_bujjw")
 script = ExtResource("2_x42e6")
 
-[node name="Booster" type="Area2D" parent="." unique_id=2052080302]
-position = Vector2(336, 496)
-scale = Vector2(0.8, 0.8)
-script = ExtResource("16_cfnpk")
-direction = 1
-boostAmount = 1000
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Booster" unique_id=1813404102]
-position = Vector2(-78.75, -371.25)
-scale = Vector2(0.99999994, 0.99999994)
-shape = SubResource("RectangleShape2D_xlbb6")
-
-[node name="WinArea" type="Area2D" parent="." unique_id=1922633135]
-position = Vector2(856, 446)
-script = ExtResource("17_wvtie")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WinArea" unique_id=509356638]
-position = Vector2(0.328125, 0)
-shape = SubResource("RectangleShape2D_ujhos")
-
-[node name="StopSign" type="Area2D" parent="." unique_id=1477596005]
-position = Vector2(144, 480)
-script = ExtResource("18_o8s4s")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StopSign" unique_id=1969918452]
-shape = SubResource("RectangleShape2D_rd3p3")
-
-[node name="GrappleDelete" parent="." unique_id=891749935 instance=ExtResource("9_iav0o")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GrappleDelete" unique_id=1773080470]
-position = Vector2(558, 330)
-shape = SubResource("RectangleShape2D_kfo6a")
-
 [node name="UI" type="CanvasLayer" parent="." unique_id=1101476983]
 
 [node name="timer" parent="UI" unique_id=727813435 instance=ExtResource("10_qxy0u")]
@@ -333,6 +300,30 @@ texture = ExtResource("32_vmrhw")
 position = Vector2(6512, 1068)
 texture = ExtResource("33_cfnpk")
 
-[connection signal="body_entered" from="Booster" to="Booster" method="_on_body_entered"]
-[connection signal="body_entered" from="WinArea" to="WinArea" method="_on_body_entered"]
-[connection signal="body_entered" from="StopSign" to="StopSign" method="_on_body_entered"]
+[node name="Spikes2" parent="." unique_id=234286517 instance=ExtResource("34_wvtie")]
+position = Vector2(4292.1895, 1196.1012)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes2" unique_id=83250270]
+position = Vector2(155.51318, 243.8988)
+shape = SubResource("RectangleShape2D_5jg4h")
+
+[node name="Booster" parent="." unique_id=2052080302 instance=ExtResource("31_vmrhw")]
+position = Vector2(5264.9756, 1043.0826)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Booster" unique_id=181766547]
+position = Vector2(-88.975586, 220.91736)
+shape = SubResource("RectangleShape2D_it6un")
+
+[node name="StopSign" parent="." unique_id=1477596005 instance=ExtResource("32_cfnpk")]
+position = Vector2(5928.3394, 1145.4342)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StopSign" unique_id=494215459]
+position = Vector2(71.660645, 102.565796)
+shape = SubResource("RectangleShape2D_d8717")
+
+[node name="WinArea" parent="." unique_id=1922633135 instance=ExtResource("33_wvtie")]
+position = Vector2(6207.0254, 1007.76953)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WinArea" unique_id=131595081]
+position = Vector2(241.47461, 176.73047)
+shape = SubResource("RectangleShape2D_qo4wk")
