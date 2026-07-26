@@ -3,6 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://bm2jr3nhvtvl2" path="res://assets/terrain_atlas.png" id="1_eyte8"]
 [ext_resource type="Script" uid="uid://bkunx6tigaxgx" path="res://scripts/barrier.gd" id="2_7hipx"]
 [ext_resource type="PackedScene" uid="uid://ckrag6qa4otci" path="res://scenes/player.tscn" id="3_gr3xe"]
+[ext_resource type="PackedScene" uid="uid://drmq771ev0wvo" path="res://scenes/timer.tscn" id="4_eokde"]
+[ext_resource type="PackedScene" uid="uid://kqd0i232o0vn" path="res://scenes/game_over_screen.tscn" id="5_ulyey"]
+[ext_resource type="PackedScene" uid="uid://bafqxi7a6hnnh" path="res://scenes/win_screen.tscn" id="6_j81xe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gr3xe"]
 texture = ExtResource("1_eyte8")
@@ -47,3 +50,20 @@ script = ExtResource("2_7hipx")
 
 [node name="Player" parent="." unique_id=1029642626 instance=ExtResource("3_gr3xe")]
 position = Vector2(535, 350)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1101476983]
+
+[node name="timer" parent="CanvasLayer" unique_id=727813435 instance=ExtResource("4_eokde")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_right = 0.0
+grow_horizontal = 0
+
+[node name="GameOverScreen" parent="CanvasLayer" unique_id=1223479433 node_paths=PackedStringArray("timer") instance=ExtResource("5_ulyey")]
+timer = NodePath("../timer")
+
+[node name="WinScreen" parent="CanvasLayer" unique_id=75464124 node_paths=PackedStringArray("timer") instance=ExtResource("6_j81xe")]
+visible = false
+timer = NodePath("../timer")

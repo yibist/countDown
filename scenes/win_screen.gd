@@ -3,10 +3,9 @@ extends ColorRect
 @export var timer: HBoxContainer
 @export var timerLabel: Label
 func _ready():
-	GlobalEventBus.playerDeath.connect(_on_player_death)
+	GlobalEventBus.playerWin.connect(_on_player_win)
 
-func _on_player_death():
+func _on_player_win():
 	timerLabel.text = "Time Passed: " + timer.getTime()
-	print("Player died!")
 	get_tree().paused = true
 	visible = true

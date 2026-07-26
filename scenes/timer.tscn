@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://drmq771ev0wvo"]
+
+[ext_resource type="Script" uid="uid://b05bdqf8orvsp" path="res://scripts/label.gd" id="1_srplv"]
+
+[node name="timer" type="HBoxContainer" unique_id=727813435 node_paths=PackedStringArray("msLabel", "sLabel")]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("1_srplv")
+msLabel = NodePath("Label2")
+sLabel = NodePath("Label")
+
+[node name="Label" type="Label" parent="." unique_id=501423578]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+
+[node name="Label2" type="Label" parent="." unique_id=115155413]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8

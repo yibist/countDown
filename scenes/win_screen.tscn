@@ -1,16 +1,15 @@
-[gd_scene format=3 uid="uid://kqd0i232o0vn"]
+[gd_scene format=3 uid="uid://bafqxi7a6hnnh"]
 
-[ext_resource type="Script" uid="uid://dahxchf5y4315" path="res://scripts/game_over_screen.gd" id="1_iwahs"]
+[ext_resource type="Script" uid="uid://cx4auevk5a2jp" path="res://scenes/win_screen.gd" id="1_wv5lq"]
 
-[node name="GameOverScreen" type="ColorRect" unique_id=1223479433 node_paths=PackedStringArray("timerLabel")]
-visible = false
+[node name="WinScreen" type="ColorRect" unique_id=1223479433 node_paths=PackedStringArray("timerLabel")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.39215687)
-script = ExtResource("1_iwahs")
+script = ExtResource("1_wv5lq")
 timerLabel = NodePath("PanelContainer/VBoxContainer/Label2")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1725354614]
@@ -32,7 +31,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="PanelContainer/VBoxContainer" unique_id=369283795]
 layout_mode = 2
-text = "GAME OVER"
+text = "Win"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="PanelContainer/VBoxContainer" unique_id=2028463723]

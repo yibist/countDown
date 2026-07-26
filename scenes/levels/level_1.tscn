@@ -8,7 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://3p0y0lshbmry" path="res://scenes/stopSign.tscn" id="6_sk5k4"]
 [ext_resource type="PackedScene" uid="uid://dsuid2ixlda8i" path="res://scenes/loseArea.tscn" id="7_oc4kc"]
 [ext_resource type="PackedScene" uid="uid://kqd0i232o0vn" path="res://scenes/game_over_screen.tscn" id="8_dga24"]
-[ext_resource type="Script" uid="uid://dahxchf5y4315" path="res://scripts/game_over_screen.gd" id="9_qxy0u"]
+[ext_resource type="PackedScene" uid="uid://bafqxi7a6hnnh" path="res://scenes/win_screen.tscn" id="10_excbq"]
+[ext_resource type="PackedScene" uid="uid://drmq771ev0wvo" path="res://scenes/timer.tscn" id="10_qxy0u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6761a"]
 texture = ExtResource("1_nsrm0")
@@ -72,7 +73,10 @@ scale = Vector2(0.8, 0.8)
 boostAmount = 1000
 
 [node name="WinArea" parent="." unique_id=1922633135 instance=ExtResource("5_sk5k4")]
-position = Vector2(1046, 384)
+position = Vector2(1040, 368)
+
+[node name="WinArea2" parent="." unique_id=292997632 instance=ExtResource("5_sk5k4")]
+position = Vector2(1040, 400)
 
 [node name="StopSign" parent="." unique_id=1477596005 instance=ExtResource("6_sk5k4")]
 position = Vector2(144, 480)
@@ -82,6 +86,17 @@ levelLength = 1000.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=672088210]
 
-[node name="GameOverScreen" parent="CanvasLayer" unique_id=1223479433 instance=ExtResource("8_dga24")]
+[node name="timer" parent="CanvasLayer" unique_id=727813435 instance=ExtResource("10_qxy0u")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_right = 0.0
+grow_horizontal = 0
+
+[node name="GameOverScreen" parent="CanvasLayer" unique_id=1223479433 node_paths=PackedStringArray("timer") instance=ExtResource("8_dga24")]
+timer = NodePath("../timer")
+
+[node name="WinScreen" parent="CanvasLayer" unique_id=36791274 node_paths=PackedStringArray("timer") instance=ExtResource("10_excbq")]
 visible = false
-script = ExtResource("9_qxy0u")
+timer = NodePath("../timer")
