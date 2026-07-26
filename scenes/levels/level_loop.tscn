@@ -170,7 +170,7 @@ tile_set = SubResource("TileSet_01chu")
 script = ExtResource("2_suw5h")
 
 [node name="Player" parent="." unique_id=1029642626 instance=ExtResource("3_g1cvr")]
-position = Vector2(155, 1073)
+position = Vector2(7552, 1339)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1101476983]
 
@@ -320,6 +320,6 @@ offset_left = 7664.0
 offset_top = 1192.0
 offset_right = 7844.0
 offset_bottom = 1215.0
-text = "Loop 1"
+text = "Loop 0"
 
 [connection signal="body_entered" from="LoopArea" to="LoopArea" method="_on_body_entered"]
